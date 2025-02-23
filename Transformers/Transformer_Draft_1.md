@@ -27,6 +27,7 @@ Below is my personal notes on the topics and I might gather information from var
 %%{
   init: {
     'theme': 'dark',
+    'layout': 'elk',
     'look': 'handDrawn',
     'fontFamily': 'verdana',
     'themeVariables': {
@@ -65,6 +66,7 @@ graph LR
 %%{
   init: {
     'theme': 'dark',
+    'layout': 'elk',
     'look': 'handDrawn',
     'fontFamily': 'verdana',
     'themeVariables': {
@@ -105,6 +107,7 @@ graph LR
 %%{
   init: {
     'theme': 'dark',
+    'layout': 'elk',
     'look': 'handDrawn',
     'fontFamily': 'verdana',
     'themeVariables': {
@@ -141,11 +144,12 @@ graph LR
 %%{
   init: {
     'theme': 'dark',
+    'layout': 'elk',
     'look': 'handDrawn',
     'fontFamily': 'verdana',
     'themeVariables': {
       'primaryColor': '#BB2528',
-      'primaryTextColor': '#f3ff',
+      'primaryTextColor': '#fff',
       'primaryBorderColor': '#7C0000',
       'lineColor': '#F8B229',
       'secondaryColor': '#006100',
@@ -181,6 +185,7 @@ graph LR
 %%{
   init: {
     'theme': 'dark',
+    'layout': 'elk',
     'look': 'handDrawn',
     'fontFamily': 'verdana',
     'themeVariables': {
@@ -218,6 +223,7 @@ graph LR
 %%{
   init: {
     'theme': 'dark',
+    'layout': 'elk',
     'look': 'handDrawn',
     'fontFamily': 'verdana',
     'themeVariables': {
@@ -253,7 +259,8 @@ graph LR
 %%{
   init: {
     'theme': 'dark',
-     'look': 'handDrawn',
+    'layout': 'elk',
+    'look': 'handDrawn',
     'fontFamily': 'verdana',
     'themeVariables': {
       'primaryColor': '#BB2528',

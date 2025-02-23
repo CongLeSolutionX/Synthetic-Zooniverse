@@ -32,7 +32,7 @@ Welcome to the **Synthetic Zooniverse**! This repository provides curated insigh
 
 The **Synthetic Zooniverse** aims to be a leading hub for understanding and exploring the world of Artificial Intelligence. The repository features:
 
--   **Research Frameworks:** Step-by-step analyses of state-of-the-art AI models and methodologies, inspired by the approach used in AlgoVerse (though focused on AI instead of algorithms).
+-   **Research Frameworks:** Step-by-step analyses of state-of-the-art AI models and methodologies, inspired by the approach used in [AlgoVerse](https://github.com/CongLeSolutionX/AlgoVerse.git) (though focused on AI instead of algorithms).
 -   **Model Deep Dives:** Detailed examinations of specific models, including architecture, training techniques, and performance evaluations.
 -   **Practical Implementations:** Code examples in various programming languages showcasing how to use and experiment with AI models.
 -   **Comparative Studies:** Side-by-side comparisons of different AI approaches and technologies.
