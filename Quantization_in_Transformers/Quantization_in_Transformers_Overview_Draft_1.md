@@ -77,11 +77,11 @@ Let's visualize the comparison table provided in the documentation as a flowchar
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 graph TD
     subgraph Quantization_Method_Selection[Quantization Method Selection]
-    style Quantization_Method_Selection fill:#f913,stroke:#333,stroke-width:2px
+    style Quantization_Method_Selection fill:#f659,stroke:#333,stroke-width:2px
         start([Start]) --> on_the_fly{On-the-fly Quantization?};
         on_the_fly -- Yes --> cpu_support{CPU Support?};
         on_the_fly -- No --> calibration_needed[Calibration Needed];
