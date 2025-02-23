@@ -197,6 +197,7 @@ mindmap
     %%   Loading is fast, but quantization process is not on-the-fly
 
 ```
+DOI: [10.13140/RG.2.2.35823.34729](http://dx.doi.org/10.13140/RG.2.2.35823.34729)
 
 
 ---
