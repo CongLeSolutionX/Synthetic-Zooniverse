@@ -15,7 +15,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ---
 
-
+Below is my personal notes on the topics and I might gather information from various sources, which I wil cite accordingly.
 
 
 ---
