@@ -9,7 +9,7 @@ source: "https://arxiv.org/abs/1706.03762"
 
 
 
-# CHANGE_ME
+# Transformer - The Orignal Model
 > This content is dual-licensed under your choice of the following licenses:
 > 1.  **MIT License:** For the code implementations in Swift and Mermaid provided in this document.
 > 2.  **Creative Commons Attribution 4.0 International License (CC BY 4.0):** For all other content, including the text, explanations, and the Mermaid diagrams and illustrations.
@@ -17,6 +17,8 @@ source: "https://arxiv.org/abs/1706.03762"
 ---
 
 Below is my personal notes on the topics and I might gather information from various sources, which I wil cite accordingly.
+
+---
 
 
 ## The Transformer Architecture: A Deep Dive
