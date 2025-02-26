@@ -42,7 +42,7 @@ config:
     }
   }
 }%%
-graph LR
+graph TD
     subgraph Foundations_of_LLMs["Foundations of Large Language Models"]
         A[Introduction] --> B(Pre-training)
         A --> Z[Key Concepts & Definitions]
