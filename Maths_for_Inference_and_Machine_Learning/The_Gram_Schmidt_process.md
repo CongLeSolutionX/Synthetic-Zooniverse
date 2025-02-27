@@ -105,6 +105,17 @@ graph TD
 ```
 
 
+**Explanation:**
+
+This diagram illustrates the Gram-Schmidt process for orthogonalizing a set of vectors.
+
+*   **Input Vectors (a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, ..., a<sub>n</sub>):** The input vectors are linearly independent.
+*   **Normalization:** The first vector (a<sub>1</sub>) is normalized to produce q<sub>1</sub>.
+*   **Projection and Subtraction:**  For each subsequent vector (a<sub>2</sub>, a<sub>3</sub>, etc.), its projection onto the previously orthogonalized vectors (q<sub>1</sub>, q<sub>2</sub>, etc.) is calculated.  The projections are subtracted from the original vector to obtain a component orthogonal to the previously found orthogonal vectors (ã<sub>2</sub>, ã<sub>3</sub>, etc.).
+*   **Normalization:** The resulting vector (ã<sub>2</sub>, ã<sub>3</sub>, etc.) is normalized to produce the next orthogonal vector in the orthonormal basis (q<sub>2</sub>, q<sub>3</sub>, etc.).
+*   **Orthonormal Basis (q<sub>1</sub>, q<sub>2</sub>, q<sub>3</sub>, ..., q<sub>n</sub>):** The final result is a set of orthonormal vectors that form a basis for the same vector space as the original vectors.
+
+
 ---
 **Licenses:**
 
