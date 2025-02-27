@@ -101,7 +101,9 @@ graph LR
 DOI: [10.13140/RG.2.2.24400.42244](http://dx.doi.org/10.13140/RG.2.2.24400.42244)
 
 
-**Explanation of the Diagram:**
+---
+
+### Explanation
 
 * **Generative Process (C):** Shows how data are generated.  The model assumes inputs (`x<sub>i</sub>`) and outputs (`y<sub>i</sub>`) are related through a linear transformation (`x<sub>i</sub><sup>T</sup>θ`) plus Gaussian noise (`ϵ`).
 * **Prior Distribution (CI):** Represents the initial belief about the parameters θ, modeled as a Gaussian distribution `N(m<sub>0</sub>, S<sub>0</sub>)`.

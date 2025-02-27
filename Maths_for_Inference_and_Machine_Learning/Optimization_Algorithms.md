@@ -101,7 +101,9 @@ graph TD
 ```
 
 
-### Explanation of the Diagram
+---
+
+### Explanation
 
 * **Nodes:** The diagram uses nodes to represent specific optimization algorithms, such as 'Conjugate Gradient Descent', 'Stochastic Approximation Algorithms', 'Newton's Method', 'Quasi-Newton Methods', and 'Gradient Descent with Momentum'.
 * **Subgraphs:** Subgraphs are used for grouping related characteristics.  This enhances readability and structure.

@@ -104,8 +104,9 @@ graph TD
 
 ```
 
+---
 
-**Explanation:**
+### Explanation
 
 This diagram illustrates the Gram-Schmidt process for orthogonalizing a set of vectors.
 
