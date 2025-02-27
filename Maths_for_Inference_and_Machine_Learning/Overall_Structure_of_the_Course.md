@@ -51,7 +51,7 @@ graph LR
     B --> G{"Model Selection & Cross-Validation"}
     B --> H["Bayesian Linear Regression"]
     
-    subgraph Feature_Extraction["Feature Extraction]
+    subgraph Feature_Extraction["Feature Extraction"]
         B --> I("Feature Extraction")
     end
     subgraph Support_Vector_Machines["Support Vector Machines"]
