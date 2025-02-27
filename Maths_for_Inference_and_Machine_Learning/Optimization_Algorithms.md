@@ -26,7 +26,7 @@ source: "https://www.doc.ic.ac.uk/~dfg/ProbabilisticInference/InferenceAndMachin
 
 ```mermaid
 ---
-title: Optimization Algorithms
+title: Optimization Algorithms (Beyond Gradient Descent)
 config:
   layout: elk
   look: handDrawn
