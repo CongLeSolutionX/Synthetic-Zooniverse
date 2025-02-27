@@ -21,7 +21,7 @@ source: "https://www.doc.ic.ac.uk/~dfg/ProbabilisticInference/InferenceAndMachin
 ---
 
 
-
+## A Diagram Structure
 
 ---
 **Licenses:**
