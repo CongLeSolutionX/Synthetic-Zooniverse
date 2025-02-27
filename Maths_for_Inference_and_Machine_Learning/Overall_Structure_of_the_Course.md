@@ -25,6 +25,7 @@ source: "https://www.doc.ic.ac.uk/~dfg/ProbabilisticInference/InferenceAndMachin
 ---
 title: Overall Structure of the Course
 config:
+  layout: elk
   look: handDrawn
   theme: dark
 ---
