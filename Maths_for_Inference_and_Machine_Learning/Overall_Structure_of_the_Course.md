@@ -20,7 +20,7 @@ source: "https://www.doc.ic.ac.uk/~dfg/ProbabilisticInference/InferenceAndMachin
 > 2. **Creative Commons Attribution 4.0 International License (CC BY 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 ---
 
-
+## Mathematics for Inference and Machine Learning - A Diagrammatic Overview
 ```mermaid
 ---
 title: Overall Structure of the Course
@@ -105,6 +105,8 @@ graph LR
     K --> KA(Vector/Matrix Preliminaries)
     K --> KB(Scalar Products)
     K --> KC(Useful Matrix Identities)
+
+    click A "https://www.doc.ic.ac.uk/~dfg/ProbabilisticInference/InferenceAndMachineLearningNotes.pdf" "Inference and Machine Learning Notes - Click to see the original lecture notes"
 ```
 
 
