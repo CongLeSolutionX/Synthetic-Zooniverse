@@ -102,7 +102,9 @@ graph TD
 DOI: [10.13140/RG.2.2.33627.89125](http://dx.doi.org/10.13140/RG.2.2.33627.89125)
 
 
-**Explanation:**
+---
+
+### Explanation
 
 * **Model Selection:**  The overarching goal is to find the simplest model that effectively explains the data.  This involves considering model complexity, including factors like the polynomial degree, mixture model components, or the network architecture in a neural network.
 

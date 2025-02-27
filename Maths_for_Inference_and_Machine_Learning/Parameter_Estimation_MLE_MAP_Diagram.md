@@ -110,7 +110,10 @@ graph LR
 DOI: [10.13140/RG.2.2.26917.00489](http://dx.doi.org/10.13140/RG.2.2.26917.00489)
 
 
-**Explanation:**
+---
+
+### Explanation
+
 
 This Mermaid diagram provides a more structured and detailed view of parameter estimation using MLE and MAP.  It incorporates the following key elements:
 

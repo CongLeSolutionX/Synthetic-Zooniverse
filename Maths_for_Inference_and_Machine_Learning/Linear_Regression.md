@@ -105,7 +105,9 @@ graph TD
 ```
 
 
-**Explanation:**
+---
+
+### Explanation
 
 This Mermaid diagram visually represents the components of a linear regression model, its parameter estimation methods, and the mathematical underpinnings.  It connects the various elements (inputs, outputs, parameters, noise) and shows their relationships. The use of subgraphs enhances readability and organization. The equations are included for direct reference.
 

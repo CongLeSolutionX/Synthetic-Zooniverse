@@ -107,7 +107,11 @@ graph LR
 
 ```
 
-**Explanation and Considerations:**
+
+---
+
+
+### Explanation and Considerations
 
 * **Directed Acyclic Graphs (DAGs) / Bayesian Networks:** These models represent probabilistic relationships between variables as directed edges.  The direction indicates a causal relationship or dependence.  For example, in the Bayesian network `p(a,b,c) = p(c|a,b)p(b|a)p(a)`, `c` depends on both `a` and `b`, and `b` depends on `a`, but not vice-versa.  This factorization is crucial for efficient inference and computation.
 
