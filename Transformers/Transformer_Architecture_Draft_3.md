@@ -31,7 +31,7 @@ title: Optimized Transformer Architecture
 config:
   layout: elk
   look: handDrawn
-  theme: default
+  theme: dark
 ---
 %%{
   init: {
@@ -49,8 +49,8 @@ config:
 flowchart LR
     %% =============== STYLES ===============
     %% You can adjust colors or shapes as needed
-    classDef blockStyle fill:#fafbfc,stroke-width:1px,stroke:#444,color:#222
-    classDef subGraphStyle fill:#eef,stroke:#333,stroke-width:1px,color:#222
+    classDef blockStyle fill:#fb8c,stroke-width:1px,stroke:#444,color:#222
+    classDef subGraphStyle fill:#e333,stroke:#333,stroke-width:1px,color:#222
     
     %% =============== NODES & SUBGRAPHS ===============
     
@@ -61,10 +61,10 @@ flowchart LR
         A3("Positional Encoding<br>PE(pos,2i)=sin(pos/10000^(2i/d_model))<br>PE(pos,2i+1)=cos(pos/10000^(2i/d_model))"):::blockStyle
     end
     
-    subgraph Encoder_Block["Encoder Stack (N layers)"]
+    subgraph Encoder_Stack_N_Layers["Encoder Stack (N layers)"]
     direction TB
         EN_in["Sum of Embeddings & Positional Encoding"]:::blockStyle
-        subgraph Single_Encoder_Layer["Encoder Layer"]
+        subgraph Single_Encoder_Layer["Single Encoder Layer"]
         direction TB
             E1("Multi-Head Self-Attention<br>headᵢ=Attention(QWᵢ^Q, KWᵢ^K, VWᵢ^V)"):::blockStyle
             E2("Add & LayerNorm<br>x + Sublayer(x)"):::blockStyle
@@ -74,12 +74,12 @@ flowchart LR
         EN_out("Encoder Output<br>z₁,...,zₙ"):::blockStyle
     end
 
-    subgraph Decoder_Block["Decoder Stack (N layers)"]
+    subgraph Decoder_Stack_N_Layers["Decoder Stack (N layers)"]
     direction TB
         D0("Target Sequence y₁,...,yₘ₋₁"):::blockStyle
         D1("Token Embeddings<br>e(yᵢ) ∈ ℝ^(d_model)"):::blockStyle
         D2("Positional Encoding (Same formula)"):::blockStyle
-        subgraph Single_Decoder_Layer["Decoder Layer"]
+        subgraph Single_Decoder_Layer["Single Decoder Layer"]
         direction TB
             D3("Masked Multi-Head Self-Attention<br>(Prevents future token access)"):::blockStyle
             D4("Add & LayerNorm<br>x + Sublayer(x)"):::blockStyle
@@ -117,7 +117,7 @@ flowchart LR
     
     %% Label for Attention Equations
     class Input_Block,Encoder_Block,Decoder_Block,Output_Block,Single_Encoder_Layer,Single_Decoder_Layer subGraphStyle
-     
+       
 ```
 
 ---
