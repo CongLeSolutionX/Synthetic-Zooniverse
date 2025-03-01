@@ -112,20 +112,6 @@ This Mermaid graph provides a detailed breakdown of the "HumanPreferenceAlignmen
 * **Edges:**  Connects related concepts to show the relationships between different techniques and challenges.  For instance, the "Supervision Signals" node branches to the specific ranking models, highlighting their dependence on different kinds of human feedback.
 * **Detailed Node Labels:**  Provides more specific labels within each category (e.g., types of loss functions, challenges in data acquisition). This is crucial for accurate representation.
 
----
-
-
-### Important Considerations
-
-* **Context and Connections:**  This diagram, while a significant improvement, is still a high-level overview. You can further expand by:
-    * Adding details like specific equations (e.g., the Bradley-Terry loss function formula).
-    * Including figures (e.g., Figure 4.9 from the original text).
-    * Linking nodes to specific sections and subsections in the original text to create clear references.
-* **Clarity and Visual Hierarchy:**  Maintain a clear and concise visual structure.  Use different colors or shapes to distinguish between different types of concepts and their relationships.
-* **Focus on Key Ideas:**  Prioritize the most significant concepts in human preference alignment.
-
-This more granular diagram gives a stronger representation of the intricacies of human preference alignment in the context of large language models.
-
 
 ---
 **Licenses:**
