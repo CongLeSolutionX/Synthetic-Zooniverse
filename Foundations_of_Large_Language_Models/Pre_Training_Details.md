@@ -85,7 +85,7 @@ graph LR
 
 ### Explaination
 
-This subgraph, "PreTrainingDetails,"  breaks down the various pre-training approaches in more detail based on the original text.  It includes connections to specific aspects (e.g., masking strategies in Masked Language Modeling, the use of special tokens in NSP).  This level of detail allows for a more informative and comprehensive understanding of pre-training methods.  Note that you can add specific examples, figures, or equations as child nodes under the relevant pre-training task nodes for more contextual understanding.  For example, you could have a node "Masked Language Modeling -> Masking Techniques" with child nodes for different masking approaches (80% masking, 15% masking).
+This subgraph, "PreTrainingDetails,"  breaks down the various pre-training approaches in more detail based on the original text.  It includes connections to specific aspects (e.g., masking strategies in Masked Language Modeling, the use of special tokens in NSP).  This level of detail allows for a more informative and comprehensive understanding of pre-training methods.
 
 
 ---
