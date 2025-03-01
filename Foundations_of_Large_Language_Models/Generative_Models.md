@@ -155,7 +155,7 @@ graph LR
 
 ----
 
-### Explaination
+### Explanation
 This Mermaid graph provides a more detailed representation of the "Generative Models" concept, including subgraphs for training, application, model architectures, scaling issues, and long sequence modeling.  Each subgraph is further broken down into specific concepts, such as various training methods (MLE, gradient descent), attention mechanisms, and positional encoding strategies. This level of detail allows for a more comprehensive understanding of the different facets of generative models within the context of the original document.
 
 

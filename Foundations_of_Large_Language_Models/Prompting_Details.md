@@ -172,7 +172,7 @@ graph LR
 
 ---
 
-### Explaination
+### Explanation
 
 This improved diagram provides a more detailed breakdown of "Prompting Details" based on the provided source material. It includes sub-graphs to organize various aspects of prompt engineering and in-context learning, making it easier to understand the relationships between different prompting techniques.
 

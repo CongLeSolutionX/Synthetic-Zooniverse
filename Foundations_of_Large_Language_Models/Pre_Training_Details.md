@@ -83,7 +83,7 @@ graph LR
 
 -----
 
-### Explaination
+### Explanation
 
 This subgraph, "PreTrainingDetails,"  breaks down the various pre-training approaches in more detail based on the original text.  It includes connections to specific aspects (e.g., masking strategies in Masked Language Modeling, the use of special tokens in NSP).  This level of detail allows for a more informative and comprehensive understanding of pre-training methods.
 

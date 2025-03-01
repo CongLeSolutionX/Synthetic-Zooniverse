@@ -124,7 +124,7 @@ graph LR
 
 ----
 
-### Explaination
+### Explanation
 
 This revised subgraph, `Alignment Details`, provides a more detailed breakdown of the alignment techniques, directly corresponding to the original text.  It further clarifies the complexities and nuances within each method, enabling a more comprehensive understanding of the alignment process.  
 
