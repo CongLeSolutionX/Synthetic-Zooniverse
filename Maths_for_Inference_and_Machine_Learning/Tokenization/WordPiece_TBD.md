@@ -4,11 +4,12 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+source: "https://www.doc.ic.ac.uk/~dfg/ProbabilisticInference/InferenceAndMachineLearningNotes.pdf"
 ---
 
 
 
-# CHANGE_ME
+# WordPiece
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -20,7 +21,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 ---
 
 
-
+## WordPiece - A Diagram Structure
 
 ---
 **Licenses:**

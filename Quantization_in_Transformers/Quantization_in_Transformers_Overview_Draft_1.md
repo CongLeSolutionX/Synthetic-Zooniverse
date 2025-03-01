@@ -74,170 +74,183 @@ Let's visualize the comparison table provided in the documentation as a flowchar
 
 ```mermaid
 ---
+title: Quantization Methods Comparison Table
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%{
+  init: {
+    'fontFamily': 'verdana',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#f529',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 graph TD
-    subgraph Quantization_Method_Selection[Quantization Method Selection]
-    style Quantization_Method_Selection fill:#f659,stroke:#333,stroke-width:2px
-        start([Start]) --> on_the_fly{On-the-fly Quantization?};
-        on_the_fly -- Yes --> cpu_support{CPU Support?};
-        on_the_fly -- No --> calibration_needed[Calibration Needed];
+    subgraph Quantization_Method_Selection["Quantization Method Selection"]
+    style Quantization_Method_Selection fill:#ff11,stroke:#333,stroke-width:2px
+        start([Start]) --> on_the_fly{On-the-fly Quantization?}
+        on_the_fly -- Yes --> cpu_support{CPU Support?}
+        on_the_fly -- No --> calibration_needed[Calibration Needed]
 
-        cpu_support -- Yes --> cuda_gpu_support{CUDA GPU Support?};
-        cpu_support -- No --> rocm_gpu_support{ROCm GPU Support?};
+        cpu_support -- Yes --> cuda_gpu_support{CUDA GPU Support?}
+        cpu_support -- No --> rocm_gpu_support{ROCm GPU Support?}
 
-        cuda_gpu_support -- Yes --> metal_support{"Metal (Apple Silicon) Support?"};
-        cuda_gpu_support -- No --> intel_gpu_support{Intel GPU Support?};
+        cuda_gpu_support -- Yes --> metal_support{"Metal (Apple Silicon) Support?"}
+        cuda_gpu_support -- No --> intel_gpu_support{Intel GPU Support?}
 
-        rocm_gpu_support -- Yes --> metal_support_2{"Metal (Apple Silicon) Support?"};
-        rocm_gpu_support -- No --> intel_gpu_support_2{Intel GPU Support?};
+        rocm_gpu_support -- Yes --> metal_support_2{"Metal (Apple Silicon) Support?"}
+        rocm_gpu_support -- No --> intel_gpu_support_2{Intel GPU Support?}
 
-        metal_support -- Yes --> torch_compile_support{Torch Compile Support?};
-        metal_support -- No --> bits_range[Bits Range];
+        metal_support -- Yes --> torch_compile_support{Torch Compile Support?}
+        metal_support -- No --> bits_range[Bits Range]
 
-        metal_support_2 -- Yes --> torch_compile_support_2{Torch Compile Support?};
-        metal_support_2 -- No --> bits_range_2[Bits Range];
+        metal_support_2 -- Yes --> torch_compile_support_2{Torch Compile Support?}
+        metal_support_2 -- No --> bits_range_2[Bits Range]
 
-        intel_gpu_support -- Yes --> torch_compile_support_3{Torch Compile Support?};
-        intel_gpu_support -- No --> bits_range_3[Bits Range];
+        intel_gpu_support -- Yes --> torch_compile_support_3{Torch Compile Support?}
+        intel_gpu_support -- No --> bits_range_3[Bits Range]
 
-        intel_gpu_support_2 -- Yes --> torch_compile_support_4{Torch Compile Support?};
-        intel_gpu_support_2 -- No --> bits_range_4[Bits Range];
+        intel_gpu_support_2 -- Yes --> torch_compile_support_4{Torch Compile Support?}
+        intel_gpu_support_2 -- No --> bits_range_4[Bits Range]
 
-        torch_compile_support -- Yes --> peft_support{PEFT Fine-Tuning?};
-        torch_compile_support -- No --> bits_range_5[Bits Range];
+        torch_compile_support -- Yes --> peft_support{PEFT Fine-Tuning?}
+        torch_compile_support -- No --> bits_range_5[Bits Range]
 
-        torch_compile_support_2 -- Yes --> peft_support_2{PEFT Fine-Tuning?};
-        torch_compile_support_2 -- No --> bits_range_6[Bits Range];
+        torch_compile_support_2 -- Yes --> peft_support_2{PEFT Fine-Tuning?}
+        torch_compile_support_2 -- No --> bits_range_6[Bits Range]
 
-        torch_compile_support_3 -- Yes --> peft_support_3{PEFT Fine-Tuning?};
-        torch_compile_support_3 -- No --> bits_range_7[Bits Range];
+        torch_compile_support_3 -- Yes --> peft_support_3{PEFT Fine-Tuning?}
+        torch_compile_support_3 -- No --> bits_range_7[Bits Range]
 
-        torch_compile_support_4 -- Yes --> peft_support_4{PEFT Fine-Tuning?};
-        torch_compile_support_4 -- No --> bits_range_8[Bits Range];
+        torch_compile_support_4 -- Yes --> peft_support_4{PEFT Fine-Tuning?}
+        torch_compile_support_4 -- No --> bits_range_8[Bits Range]
 
-        peft_support -- Yes --> serializable{Serializable with 🤗Transformers?};
-        peft_support -- No --> bits_range_9[Bits Range];
+        peft_support -- Yes --> serializable{Serializable with 🤗Transformers?}
+        peft_support -- No --> bits_range_9[Bits Range]
 
-        peft_support_2 -- Yes --> serializable_2{Serializable with 🤗Transformers?};
-        peft_support_2 -- No --> bits_range_10[Bits Range];
+        peft_support_2 -- Yes --> serializable_2{Serializable with 🤗Transformers?}
+        peft_support_2 -- No --> bits_range_10[Bits Range]
 
-        peft_support_3 -- Yes --> serializable_3{Serializable with 🤗Transformers?};
-        peft_support_3 -- No --> bits_range_11[Bits Range];
+        peft_support_3 -- Yes --> serializable_3{Serializable with 🤗Transformers?}
+        peft_support_3 -- No --> bits_range_11[Bits Range]
 
-        peft_support_4 -- Yes --> serializable_4{Serializable with 🤗Transformers?};
-        peft_support_4 -- No --> bits_range_12[Bits Range];
+        peft_support_4 -- Yes --> serializable_4{Serializable with 🤗Transformers?}
+        peft_support_4 -- No --> bits_range_12[Bits Range]
 
-        serializable -- Yes --> transformers_support{🤗Transformers Support?};
-        serializable -- No --> bits_range_13[Bits Range];
+        serializable -- Yes --> transformers_support{🤗Transformers Support?}
+        serializable -- No --> bits_range_13[Bits Range]
 
-        serializable_2 -- Yes --> transformers_support_2{🤗Transformers Support?};
-        serializable_2 -- No --> bits_range_14[Bits Range];
+        serializable_2 -- Yes --> transformers_support_2{🤗Transformers Support?}
+        serializable_2 -- No --> bits_range_14[Bits Range]
 
-        serializable_3 -- Yes --> transformers_support_3{🤗Transformers Support?};
-        serializable_3 -- No --> bits_range_15[Bits Range];
+        serializable_3 -- Yes --> transformers_support_3{🤗Transformers Support?}
+        serializable_3 -- No --> bits_range_15[Bits Range]
 
-        serializable_4 -- Yes --> transformers_support_4{🤗Transformers Support?};
-        serializable_4 -- No --> bits_range_16[Bits Range];
+        serializable_4 -- Yes --> transformers_support_4{🤗Transformers Support?}
+        serializable_4 -- No --> bits_range_16[Bits Range]
 
 
-        calibration_needed --> cpu_support_calibrated{CPU Support?};
+        calibration_needed --> cpu_support_calibrated{CPU Support?}
 
-        cpu_support_calibrated -- Yes --> cuda_gpu_support_calibrated{CUDA GPU Support?};
-        cpu_support_calibrated -- No --> rocm_gpu_support_calibrated{ROCm GPU Support?};
+        cpu_support_calibrated -- Yes --> cuda_gpu_support_calibrated{CUDA GPU Support?}
+        cpu_support_calibrated -- No --> rocm_gpu_support_calibrated{ROCm GPU Support?}
 
-        cuda_gpu_support_calibrated -- Yes --> metal_support_calibrated{"Metal (Apple Silicon) Support?"};
-        cuda_gpu_support_calibrated -- No --> intel_gpu_support_calibrated{Intel GPU Support?};
+        cuda_gpu_support_calibrated -- Yes --> metal_support_calibrated{"Metal (Apple Silicon) Support?"}
+        cuda_gpu_support_calibrated -- No --> intel_gpu_support_calibrated{Intel GPU Support?}
 
-        rocm_gpu_support_calibrated -- Yes --> metal_support_calibrated_2{"Metal (Apple Silicon) Support?"};
-        rocm_gpu_support_calibrated -- No --> intel_gpu_support_calibrated_2{Intel GPU Support?};
+        rocm_gpu_support_calibrated -- Yes --> metal_support_calibrated_2{"Metal (Apple Silicon) Support?"}
+        rocm_gpu_support_calibrated -- No --> intel_gpu_support_calibrated_2{Intel GPU Support?}
 
-        metal_support_calibrated -- Yes --> torch_compile_support_calibrated{Torch Compile Support?};
-        metal_support_calibrated -- No --> bits_range_calibrated[Bits Range];
+        metal_support_calibrated -- Yes --> torch_compile_support_calibrated{Torch Compile Support?}
+        metal_support_calibrated -- No --> bits_range_calibrated[Bits Range]
 
-        metal_support_calibrated_2 -- Yes --> torch_compile_support_calibrated_2{Torch Compile Support?};
-        metal_support_calibrated_2 -- No --> bits_range_calibrated_2[Bits Range];
+        metal_support_calibrated_2 -- Yes --> torch_compile_support_calibrated_2{Torch Compile Support?}
+        metal_support_calibrated_2 -- No --> bits_range_calibrated_2[Bits Range]
 
-        intel_gpu_support_calibrated -- Yes --> torch_compile_support_calibrated_3{Torch Compile Support?};
-        intel_gpu_support_calibrated -- No --> bits_range_calibrated_3[Bits Range];
+        intel_gpu_support_calibrated -- Yes --> torch_compile_support_calibrated_3{Torch Compile Support?}
+        intel_gpu_support_calibrated -- No --> bits_range_calibrated_3[Bits Range]
 
-        intel_gpu_support_calibrated_2 -- Yes --> torch_compile_support_calibrated_4{Torch Compile Support?};
-        intel_gpu_support_calibrated_2 -- No --> bits_range_calibrated_4[Bits Range];
+        intel_gpu_support_calibrated_2 -- Yes --> torch_compile_support_calibrated_4{Torch Compile Support?}
+        intel_gpu_support_calibrated_2 -- No --> bits_range_calibrated_4[Bits Range]
 
-        torch_compile_support_calibrated -- Yes --> peft_support_calibrated{PEFT Fine-Tuning?};
-        torch_compile_support_calibrated -- No --> bits_range_calibrated_5[Bits Range];
+        torch_compile_support_calibrated -- Yes --> peft_support_calibrated{PEFT Fine-Tuning?}
+        torch_compile_support_calibrated -- No --> bits_range_calibrated_5[Bits Range]
 
-        torch_compile_support_calibrated_2 -- Yes --> peft_support_calibrated_2{PEFT Fine-Tuning?};
-        torch_compile_support_calibrated_2 -- No --> bits_range_calibrated_6[Bits Range];
+        torch_compile_support_calibrated_2 -- Yes --> peft_support_calibrated_2{PEFT Fine-Tuning?}
+        torch_compile_support_calibrated_2 -- No --> bits_range_calibrated_6[Bits Range]
 
-        torch_compile_support_calibrated_3 -- Yes --> peft_support_calibrated_3{PEFT Fine-Tuning?};
-        torch_compile_support_calibrated_3 -- No --> bits_range_calibrated_7[Bits Range];
+        torch_compile_support_calibrated_3 -- Yes --> peft_support_calibrated_3{PEFT Fine-Tuning?}
+        torch_compile_support_calibrated_3 -- No --> bits_range_calibrated_7[Bits Range]
 
-        torch_compile_support_calibrated_4 -- Yes --> peft_support_calibrated_4{PEFT Fine-Tuning?};
-        torch_compile_support_calibrated_4 -- No --> bits_range_calibrated_8[Bits Range];
+        torch_compile_support_calibrated_4 -- Yes --> peft_support_calibrated_4{PEFT Fine-Tuning?}
+        torch_compile_support_calibrated_4 -- No --> bits_range_calibrated_8[Bits Range]
 
-        peft_support_calibrated -- Yes --> serializable_calibrated{Serializable with 🤗Transformers?};
-        peft_support_calibrated -- No --> bits_range_calibrated_9[Bits Range];
+        peft_support_calibrated -- Yes --> serializable_calibrated{Serializable with 🤗Transformers?}
+        peft_support_calibrated -- No --> bits_range_calibrated_9[Bits Range]
 
-        peft_support_calibrated_2 -- Yes --> serializable_calibrated_2{Serializable with 🤗Transformers?};
-        peft_support_calibrated_2 -- No --> bits_range_calibrated_10[Bits Range];
+        peft_support_calibrated_2 -- Yes --> serializable_calibrated_2{Serializable with 🤗Transformers?}
+        peft_support_calibrated_2 -- No --> bits_range_calibrated_10[Bits Range]
 
-        peft_support_calibrated_3 -- Yes --> serializable_calibrated_3{Serializable with 🤗Transformers?};
-        peft_support_calibrated_3 -- No --> bits_range_calibrated_11[Bits Range];
+        peft_support_calibrated_3 -- Yes --> serializable_calibrated_3{Serializable with 🤗Transformers?}
+        peft_support_calibrated_3 -- No --> bits_range_calibrated_11[Bits Range]
 
-        peft_support_calibrated_4 -- Yes --> serializable_calibrated_4{Serializable with 🤗Transformers?};
-        peft_support_calibrated_4 -- No --> bits_range_calibrated_12[Bits Range];
+        peft_support_calibrated_4 -- Yes --> serializable_calibrated_4{Serializable with 🤗Transformers?}
+        peft_support_calibrated_4 -- No --> bits_range_calibrated_12[Bits Range]
 
-        serializable_calibrated -- Yes --> transformers_support_calibrated{🤗Transformers Support?};
-        serializable_calibrated -- No --> bits_range_calibrated_13[Bits Range];
+        serializable_calibrated -- Yes --> transformers_support_calibrated{🤗Transformers Support?}
+        serializable_calibrated -- No --> bits_range_calibrated_13[Bits Range]
 
-        serializable_calibrated_2 -- Yes --> transformers_support_calibrated_2{🤗Transformers Support?};
-        serializable_calibrated_2 -- No --> bits_range_calibrated_14[Bits Range];
+        serializable_calibrated_2 -- Yes --> transformers_support_calibrated_2{🤗Transformers Support?}
+        serializable_calibrated_2 -- No --> bits_range_calibrated_14[Bits Range]
 
-        serializable_calibrated_3 -- Yes --> transformers_support_calibrated_3{🤗Transformers Support?};
+        serializable_calibrated_3 -- Yes --> transformers_support_calibrated_3{🤗Transformers Support?}
         serializable_calibrated_3 -- No --> bits_range_calibrated_15[Bits Range];
 
-        serializable_calibrated_4 -- Yes --> transformers_support_calibrated_4{🤗Transformers Support?};
-        serializable_calibrated_4 -- No --> bits_range_calibrated_16[Bits Range];
+        serializable_calibrated_4 -- Yes --> transformers_support_calibrated_4{🤗Transformers Support?}
+        serializable_calibrated_4 -- No --> bits_range_calibrated_16[Bits Range]
 
 
-        bits_range --> aqlm[AQLM];
-        bits_range_2 --> awq[AWQ];
-        bits_range_3 --> bitsandbytes[bitsandbytes];
-        bits_range_4 --> compressed_tensors[compressed-tensors];
-        bits_range_5 --> eetq[EETQ];
-        bits_range_6 --> gguf_ggml[GGUF / GGML];
-        bits_range_7 --> gptqmodel[GPTQModel];
-        bits_range_8 --> autogptq[AutoGPTQ];
-        bits_range_9 --> higgs[HIGGS];
-        bits_range_10 --> hqq[HQQ];
-        bits_range_11 --> optimum_quanto[optimum-quanto];
-        bits_range_12 --> fbgemm_fp8[FBGEMM_FP8];
-        bits_range_13 --> torchao[torchao];
-        bits_range_14 --> vptq[VPTQ];
-        bits_range_15 --> spqr[SpQR];
-        bits_range_16 --> finegrained_fp8[FINEGRAINED_FP8];
+        bits_range --> aqlm[AQLM]
+        bits_range_2 --> awq[AWQ]
+        bits_range_3 --> bitsandbytes[bitsandbytes]
+        bits_range_4 --> compressed_tensors[compressed-tensors]
+        bits_range_5 --> eetq[EETQ]
+        bits_range_6 --> gguf_ggml[GGUF / GGML]
+        bits_range_7 --> gptqmodel[GPTQModel]
+        bits_range_8 --> autogptq[AutoGPTQ]
+        bits_range_9 --> higgs[HIGGS]
+        bits_range_10 --> hqq[HQQ]
+        bits_range_11 --> optimum_quanto[optimum-quanto]
+        bits_range_12 --> fbgemm_fp8[FBGEMM_FP8]
+        bits_range_13 --> torchao[torchao]
+        bits_range_14 --> vptq[VPTQ]
+        bits_range_15 --> spqr[SpQR]
+        bits_range_16 --> finegrained_fp8[FINEGRAINED_FP8]
 
-        bits_range_calibrated --> aqlm_calibrated[AQLM];
-        bits_range_calibrated_2 --> awq_calibrated[AWQ];
-        bits_range_calibrated_3 --> bitsandbytes_calibrated[bitsandbytes];
-        bits_range_calibrated_4 --> compressed_tensors_calibrated[compressed-tensors];
-        bits_range_calibrated_5 --> eetq_calibrated[EETQ];
-        bits_range_calibrated_6 --> gguf_ggml_calibrated[GGUF / GGML];
-        bits_range_calibrated_7 --> gptqmodel_calibrated[GPTQModel];
-        bits_range_calibrated_8 --> autogptq_calibrated[AutoGPTQ];
-        bits_range_calibrated_9 --> higgs_calibrated[HIGGS];
-        bits_range_calibrated_10 --> hqq_calibrated[HQQ];
-        bits_range_calibrated_11 --> optimum_quanto_calibrated[optimum-quanto];
-        bits_range_calibrated_12 --> fbgemm_fp8_calibrated[FBGEMM_FP8];
-        bits_range_calibrated_13 --> torchao_calibrated[torchao];
-        bits_range_calibrated_14 --> vptq_calibrated[VPTQ];
-        bits_range_calibrated_15 --> spqr_calibrated[SpQR];
-        bits_range_calibrated_16 --> finegrained_fp8_calibrated[FINEGRAINED_FP8];
-
+        bits_range_calibrated --> aqlm_calibrated[AQLM]
+        bits_range_calibrated_2 --> awq_calibrated[AWQ]
+        bits_range_calibrated_3 --> bitsandbytes_calibrated[bitsandbytes]
+        bits_range_calibrated_4 --> compressed_tensors_calibrated[compressed-tensors]
+        bits_range_calibrated_5 --> eetq_calibrated[EETQ]
+        bits_range_calibrated_6 --> gguf_ggml_calibrated[GGUF / GGML]
+        bits_range_calibrated_7 --> gptqmodel_calibrated[GPTQModel]
+        bits_range_calibrated_8 --> autogptq_calibrated[AutoGPTQ]
+        bits_range_calibrated_9 --> higgs_calibrated[HIGGS]
+        bits_range_calibrated_10 --> hqq_calibrated[HQQ]
+        bits_range_calibrated_11 --> optimum_quanto_calibrated[optimum-quanto]
+        bits_range_calibrated_12 --> fbgemm_fp8_calibrated[FBGEMM_FP8]
+        bits_range_calibrated_13 --> torchao_calibrated[torchao]
+        bits_range_calibrated_14 --> vptq_calibrated[VPTQ]
+        bits_range_calibrated_15 --> spqr_calibrated[SpQR]
+        bits_range_calibrated_16 --> finegrained_fp8_calibrated[FINEGRAINED_FP8]
     end
     
 ```
