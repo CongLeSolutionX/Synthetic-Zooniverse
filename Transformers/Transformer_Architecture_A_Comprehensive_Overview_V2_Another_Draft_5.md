@@ -48,7 +48,7 @@ config:
 }%%
 graph LR
     subgraph Transformer["Transformer Architecture"]
-    style Transformer fill:#ee34,stroke:#005a9e,stroke-width:2px
+    style Transformer fill:#ec51,stroke:#005a9e,stroke-width:2px
 
         A["Input Sequence<br>(x₁, ..., xₙ)"] --> B["Input Embeddings"]
         B --> C["Positional Encoding"]
@@ -95,13 +95,16 @@ graph LR
         I1 -- "See Detail" --> Decoder_Layer
         IN -- "See Detail" --> Decoder_Layer
     end
+    
+    linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 stroke:#2962FF,stroke-width:3px
     linkStyle 21,22,23,24 stroke:#c8e4,stroke-width:1px,stroke-dasharray: 2 2
-     linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 stroke:#2962FF,stroke-width:3px
-    %% linkStyle 25,26,27,28 stroke:#c8e4,stroke-width:1px
+    linkStyle 25,26 stroke:#c8e4,stroke-width:1px
+    %% linkStyle 27,28 stroke:#c8e4,stroke-width:1px
+    %% linkStyle 25,26,27,28 stroke:#c8,stroke-width:1px
     %% linkStyle 29,30,31,32 style=stroke-width:3px
 
     subgraph Encoder_Layer["Encoder Layer Detail"]
-        style Encoder_Layer fill:#ccf,stroke:#3498DB,stroke-width:2px
+        style Encoder_Layer fill:#c5f2,stroke:#3498DB,stroke-width:2px
         En_MultiHead["Multi-Head<br>Self-Attention"] --> En_AddNorm1["Add & Norm"]
         En_AddNorm1 --> En_FFN["Feed-Forward<br>Network"]
         En_FFN --> En_AddNorm2["Add & Norm"]
@@ -117,7 +120,7 @@ graph LR
     %%  linkStyle 37 stroke:#3498DB, stroke-width:4px
 
     subgraph Decoder_Layer["Decoder Layer Detail"]
-        style Decoder_Layer fill:#ddf,stroke:#45B39D,stroke-width:2px
+        style Decoder_Layer fill:#dd23,stroke:#45B39D,stroke-width:2px
 
         De_MaskedMultiHead["Masked<br>Multi-Head<br>Self-Attention"] --> De_AddNorm1["Add & Norm"]
         De_AddNorm1 --> De_EncDecAttn["Multi-Head<br>Encoder-Decoder<br>Attention"]
@@ -196,10 +199,10 @@ graph LR
         Attn_Output_sub("softmax(QKᵀ / √dₖ)V")
 
     %% Highlight Input/Output Sequences
-    style A fill:#FFD700,stroke:#DAA520,stroke-width:4px
-    style S fill:#FFD700,stroke:#DAA520,stroke-width:4px
-    style R fill:#FFD700,stroke:#DAA520,stroke-width:4px
-
+    style A fill:#F110F0,stroke:#DAA520,stroke-width:4px
+    style S fill:#F110F0,stroke:#DAA520,stroke-width:4px
+    style R fill:#F110F0,stroke:#DAA520,stroke-width:4px
+    
 ```
 
 
