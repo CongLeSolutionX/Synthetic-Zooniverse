@@ -21,7 +21,7 @@ original source: "https://huggingface.co/microsoft/Phi-4-multimodal-instruct/blo
 > 2. **Creative Commons Attribution 4.0 International License (CC BY 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 ---
 
-
+## - A Diagrammatic Guide
 
 
 ---
