@@ -10,7 +10,7 @@ source: "https://arxiv.org/pdf/2205.14135"
 
 
 
-# Memory Hierarchy
+# GPU Memory Hierarchy
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -21,7 +21,7 @@ source: "https://arxiv.org/pdf/2205.14135"
 > 2. **Creative Commons Attribution 4.0 International License (CC BY 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 ---
 
-## Memory Hierarchy - A Diagrammatic Guide 
+## GPU Memory Hierarchy - A Diagrammatic Guide 
 ```mermaid
 ---
 title: "FlashAttention - Fast and Memory-Eﬃcient Exact Attention with IO-Awareness"
