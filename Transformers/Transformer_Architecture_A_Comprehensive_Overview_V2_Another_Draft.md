@@ -29,7 +29,7 @@ config:
 ---
 %%{
   init: {
-    "flowchart": { "htmlLabels": true, 'curve': 'stepBefore' },
+    "flowchart": { "htmlLabels": true, 'curve': 'linear' },
     'fontFamily': 'verdana',
     'themeVariables': {
       'primaryColor': '#BB2528',
@@ -41,6 +41,9 @@ config:
     }
   }
 }%%
+%%%%%%%% NOTE:
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 graph LR
     subgraph Transformer["Transformer Architecture"]
         style Transformer fill:#e834,stroke:#005a9e,stroke-width:2px
@@ -164,9 +167,6 @@ graph LR
     Attn_Output_sub("softmax(QK<sup>T</sup> / √d<sub>k</sub>)V")
 
     linkStyle 38,41 stroke:#aa3,stroke-width:1px,stroke-dasharray: 5 5
-
-%%%%%%%% Available curve styles include the following keywords:
-%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 ```
 
 ---
