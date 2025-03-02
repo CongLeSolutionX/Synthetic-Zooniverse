@@ -48,6 +48,7 @@ config:
 }%%
 graph LR
     subgraph Phi4_Development_Overview["Phi-4 Development Overview"]
+    style Phi4_Development_Overview fill:#22f4,stroke:#333,stroke-width:2px
         A["Phi-4 Development"] --> B{"Data Quality Focus"}
         B --> C("Synthetic Data Generation")
         B --> D("Organic Data Curation")
