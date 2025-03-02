@@ -93,9 +93,7 @@ graph LR
 
 
      %% Position Nodes for Parallel Layout
-
         subgraph EncoderFlow
-        %% direction LR
             D1
             D2
             D3
@@ -103,7 +101,6 @@ graph LR
         end
 
         subgraph DecoderFlow
-        %% direction LR
             I1
             I2
             I3
@@ -112,49 +109,7 @@ graph LR
 
         EncoderFlow --> TimeArrow
         DecoderFlow --> TimeArrow
-    
-        subgraph Encoder_Layer["Encoder Layer Detail"]
-            style Encoder_Layer fill:#ccff2,stroke:#005a9e,stroke-width:1px
-            En_MultiHead["Multi-Head<br>Self-Attention"] --> En_AddNorm1["Add & Norm"]
-            En_AddNorm1 --> En_FFN["Feed-Forward<br>Network"]
-            En_FFN --> En_AddNorm2["Add & Norm"]
-
-            %% Input connections (Conceptual - not directly drawn in main flow)
-            En_Input --> En_MultiHead
-
-            %% Output connection (Conceptual - represented by layer stacking in main flow)
-            En_AddNorm2 --> En_Output
-        end
-
-        subgraph Decoder_Layer["Decoder Layer Detail"]
-        style Decoder_Layer fill:#ddf2,stroke:#005a9e,stroke-width:1px
-
-            De_MaskedMultiHead["Masked<br>Multi-Head<br>Self-Attention"] --> De_AddNorm1["Add & Norm"]
-            De_AddNorm1 --> De_EncDecAttn["Multi-Head<br>Encoder-Decoder<br>Attention"]
-            De_EncDecAttn --> De_AddNorm2["Add & Norm"]
-            De_AddNorm2 --> De_FFN["Feed-Forward<br>Network"]
-            De_FFN --> De_AddNorm3["Add & Norm"]
-
-            %% Input Connections (Conceptual)
-            De_Input --> De_MaskedMultiHead
-            De_EncoderOutput --> De_EncDecAttn
-
-            %% Output Connection (Conceptual)
-            De_AddNorm3--> De_Output
-        end
-
-        subgraph Scaled_Dot_Product_Attention["Scaled Dot-Product Attention"]
-        style Scaled_Dot_Product_Attention fill:#c8e4,stroke:#43a047,stroke-width:2px
-            Attn_Input["Input<br>(Q, K, V)"] --> Attn_ScaledDotProduct["Scaled<br>Dot-Product"]
-            Attn_ScaledDotProduct --> Attn_Softmax["Softmax"]
-            Attn_Softmax --> Attn_Output["Output"]
-            Attn_Input --> Attn_Output
-        end
-
-        En_MultiHead -- "Q, K, V" --> Attn_Input
-        De_MaskedMultiHead -- "Q, K, V" --> Attn_Input
-        De_EncDecAttn -- "Q from Decoder,<br>K, V from Encoder" --> Attn_Input
-
+ 
         %% Formulas
 
         classDef formulaStyle fill:none,stroke:none,font-size:14px
@@ -200,10 +155,50 @@ graph LR
         Attn_Softmax_sub("softmax(QK<sup>T</sup> / √d<sub>k</sub>)")
         Attn_Output -.-> Attn_Output_sub:::formulaStyleSubText
         Attn_Output_sub("softmax(QK<sup>T</sup> / √d<sub>k</sub>)V")
-
-        %% linkStyle 51,52,53,54 stroke:#ccc,stroke-width:1px,stroke-dasharray: 2 2
-        %% linkStyle 56,59 stroke:#aaa,stroke-width:1px,stroke-dasharray: 5 5
     end
+
+       
+    subgraph Encoder_Layer["Encoder Layer Detail"]
+        style Encoder_Layer fill:#ccff2,stroke:#005a9e,stroke-width:1px
+        En_MultiHead["Multi-Head<br>Self-Attention"] --> En_AddNorm1["Add & Norm"]
+        En_AddNorm1 --> En_FFN["Feed-Forward<br>Network"]
+        En_FFN --> En_AddNorm2["Add & Norm"]
+
+        %% Input connections (Conceptual - not directly drawn in main flow)
+        En_Input --> En_MultiHead
+
+        %% Output connection (Conceptual - represented by layer stacking in main flow)
+        En_AddNorm2 --> En_Output
+    end
+
+    subgraph Decoder_Layer["Decoder Layer Detail"]
+    style Decoder_Layer fill:#ddf2,stroke:#005a9e,stroke-width:1px
+
+        De_MaskedMultiHead["Masked<br>Multi-Head<br>Self-Attention"] --> De_AddNorm1["Add & Norm"]
+        De_AddNorm1 --> De_EncDecAttn["Multi-Head<br>Encoder-Decoder<br>Attention"]
+        De_EncDecAttn --> De_AddNorm2["Add & Norm"]
+        De_AddNorm2 --> De_FFN["Feed-Forward<br>Network"]
+        De_FFN --> De_AddNorm3["Add & Norm"]
+
+        %% Input Connections (Conceptual)
+        De_Input --> De_MaskedMultiHead
+        De_EncoderOutput --> De_EncDecAttn
+
+        %% Output Connection (Conceptual)
+        De_AddNorm3--> De_Output
+    end
+
+   subgraph Scaled_Dot_Product_Attention["Scaled Dot-Product Attention"]
+     style Scaled_Dot_Product_Attention fill:#c8e4,stroke:#43a047,stroke-width:2px
+        Attn_Input["Input<br>(Q, K, V)"] --> Attn_ScaledDotProduct["Scaled<br>Dot-Product"]
+        Attn_ScaledDotProduct --> Attn_Softmax["Softmax"]
+        Attn_Softmax --> Attn_Output["Output"]
+        Attn_Input --> Attn_Output
+    end
+
+    En_MultiHead -- "Q, K, V" --> Attn_Input
+    De_MaskedMultiHead -- "Q, K, V" --> Attn_Input
+    De_EncDecAttn -- "Q from Decoder,<br>K, V from Encoder" --> Attn_Input
 
 ```
 
