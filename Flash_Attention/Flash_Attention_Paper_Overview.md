@@ -47,7 +47,7 @@ config:
     }
   }
 }%%
-graph TD
+graph LR
     subgraph FlashAttention_Overview["FlashAttention Overview"]
         A[FlashAttention] --> B{Core Idea};
         B --> C[IO-Aware Exact Attention];
