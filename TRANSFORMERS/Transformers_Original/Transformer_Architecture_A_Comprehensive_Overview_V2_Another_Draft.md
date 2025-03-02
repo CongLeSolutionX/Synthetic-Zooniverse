@@ -34,7 +34,7 @@ config:
 %%{
   init: {
     "flowchart": { "htmlLabels": true, 'curve': 'linear' },
-    'fontFamily': 'verdana',
+    'fontFamily': 'Fantasy',
     'themeVariables': {
       'primaryColor': '#BB2528',
       'primaryTextColor': '#f529',
