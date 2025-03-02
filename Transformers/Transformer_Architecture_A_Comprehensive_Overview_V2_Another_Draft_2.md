@@ -93,7 +93,6 @@ graph LR
 
 
      %% Position Nodes for Parallel Layout
-
         subgraph EncoderFlow
         %% direction LR
             D1
@@ -201,8 +200,8 @@ graph LR
         Attn_Output -.-> Attn_Output_sub:::formulaStyleSubText
         Attn_Output_sub("softmax(QK<sup>T</sup> / √d<sub>k</sub>)V")
 
-        %% linkStyle 51,52,53,54 stroke:#ccc,stroke-width:1px,stroke-dasharray: 2 2
-        %% linkStyle 56,59 stroke:#aaa,stroke-width:1px,stroke-dasharray: 5 5
+        linkStyle 51,52,53,54 stroke:#ccc,stroke-width:1px,stroke-dasharray: 2 2
+        linkStyle 56,59 stroke:#aaa,stroke-width:1px,stroke-dasharray: 5 5
     end
 
 ```
