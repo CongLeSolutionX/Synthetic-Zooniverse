@@ -164,7 +164,9 @@ graph LR
     Attn_Output_sub("softmax(QK<sup>T</sup> / √d<sub>k</sub>)V")
 
     linkStyle 38,41 stroke:#aa3,stroke-width:1px,stroke-dasharray: 5 5
-    
+
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 ```
 
 ---

@@ -184,6 +184,8 @@ graph LR
     Attn_Output -.-> Attn_Output_sub:::formulaStyleSubText
     Attn_Output_sub("softmax(QK<sup>T</sup> / √d<sub>k</sub>)V")
 
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 ```
 
 ---
