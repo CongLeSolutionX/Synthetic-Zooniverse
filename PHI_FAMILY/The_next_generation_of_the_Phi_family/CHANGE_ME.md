@@ -4,7 +4,9 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+original source: "https://azure.microsoft.com/en-us/blog/empowering-innovation-the-next-generation-of-the-phi-family/"
 ---
+
 
 
 
@@ -19,8 +21,8 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 > 2. **Creative Commons Attribution 4.0 International License (CC BY 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
 ---
 
-
 ## - A Diagrammatic Guide
+
 
 ---
 **Licenses:**
