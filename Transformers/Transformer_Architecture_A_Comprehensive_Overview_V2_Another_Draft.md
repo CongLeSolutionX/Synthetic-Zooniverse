@@ -8,7 +8,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 
-# Transformer Architecture - A Comprehensive Overview - V2 - Draft
+# Transformer Architecture - Simplified Main Flow with Detailed Layer Subgraphs
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -21,7 +21,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ```mermaid
 ---
-title: Transformer Architecture - Consolidated Overview
+title: Transformer Architecture - Simplified Main Flow with Detailed Layer Subgraphs
 config:
   layout: elk
   look: handDrawn
@@ -47,86 +47,65 @@ graph LR
 
         A["Input Sequence<br>(x₁, ..., xₙ)"] --> B["Input Embeddings"]
         B --> C["Positional Encoding"]
-        C --> D["Encoder"]
+        C --> D1["Encoder Block 1"]
 
-        subgraph Encoder["Encoder<br>(N=6 Layers)"]
-            style Encoder fill:#22ff,stroke:#005a9e,stroke-width:2px
-            D1["Encoder Layer 1"] --> D2["Encoder Layer 2"]
-            D2 --> D3["..."]
-            D3 --> D4["Encoder Layer N"]
-        end
+        D1 --> D2["Encoder Block 2"]
+        D2 --> D3["..."]
+        D3 --> DN["Encoder Block N"]
 
-        subgraph Encoder_Layer["Encoder Layer"]
-            style Encoder_Layer fill:#ccf3,stroke:#005a9e,stroke-width:1px
-            En_MultiHead["Multi-Head<br>Self-Attention"] --> En_AddNorm1["Add & Norm"]
-            En_AddNorm1 --> En_FFN["Feed-Forward<br>Network"]
-            En_FFN --> En_AddNorm2["Add & Norm"]
+        DN --> I1["Decoder Block 1"]
 
-            %% Connections within an Encoder Layer
-            B_enc --> En_MultiHead
-            C_enc --> En_MultiHead
+        I1 --> I2["Decoder Block 2"]
+        I2 --> I3["..."]
+        I3 --> IN["Decoder Block N"]
 
-             %% Output connection
-            En_AddNorm2 --> D_next
-
-        end
-
-                subgraph Decoder["Decoder (N=6 Layers)"]
-            style Decoder fill:#d8e3,stroke:#005a9e,stroke-width:2px
-            I1["Decoder Layer 1"] --> I2["Decoder Layer 2"]
-            I2 --> I3["..."]
-            I3 --> I4["Decoder Layer N"]
-        end
-
-        subgraph Decoder_Layer["Decoder Layer"]
-            style Decoder_Layer fill:#ddf3,stroke:#005a9e,stroke-width:1px
-
-            De_MaskedMultiHead["Masked<br>Multi-Head<br>Self-Attention"] --> De_AddNorm1["Add & Norm"]
-            De_AddNorm1 --> De_EncDecAttn["Multi-Head<br>Encoder-Decoder<br>Attention"]
-            De_EncDecAttn --> De_AddNorm2["Add & Norm"]
-            De_AddNorm2 --> De_FFN["Feed-Forward<br>Network"]
-            De_FFN --> De_AddNorm3["Add & Norm"]
-
-            %% Connections within a Decoder Layer
-
-            S_dec --> De_MaskedMultiHead
-            U_dec --> De_MaskedMultiHead
-
-            %% Connection from Encoder
-            H_dec --> De_EncDecAttn
-
-            %% Output Connection
-            De_AddNorm3 --> I_next
-        end
-
-        D --> I["Decoder"]
-        I --> P["Linear Layer"]
+        IN --> P["Linear Layer"]
         P --> Q["Softmax"]
         Q --> R["Output Sequence<br>(y₁, ..., yₘ)"]
 
         A -.-> S["Target Sequence<br>(y₁, ..., yₘ₋₁)"]
         S --> T["Target Embeddings"]
         T --> U["Positional Encoding"]
+        U --> I1
 
-        %% Connecting Encoder and Decoder Layers
-        D4 -- "Output" --> H_dec
-        D1 -- " " --> Encoder_Layer
-        D2 -- " " --> Encoder_Layer
-        D3 -- " " --> Encoder_Layer
-        D4 -- " " --> Encoder_Layer
-        I1 -- " " --> Decoder_Layer
-        I2 -- " " --> Decoder_Layer
-        I3 -- " " --> Decoder_Layer
-        I4 -- " " --> Decoder_Layer
-
-        %% Connecting external inputs to Encoder and Decoder Layers
-        B --> B_enc
-        C --> C_enc
-        S --> S_dec
-        U --> U_dec
+        %% Connections to show layer details (referencing side subgraphs)
+        D1 -- "See Encoder Layer Detail" --> Encoder_Layer
+        DN -- "See Encoder Layer Detail" --> Encoder_Layer
+        I1 -- "See Decoder Layer Detail" --> Decoder_Layer
+        IN -- "See Decoder Layer Detail" --> Decoder_Layer
      end
 
-    subgraph Scaled_Dot_Product_Attention["Scaled Dot-Product Attention"]
+    subgraph Encoder_Layer["Encoder Layer Detail"]
+        style Encoder_Layer fill:#2cc33,stroke:#005a9e,stroke-width:1px
+        En_MultiHead["Multi-Head<br>Self-Attention"] --> En_AddNorm1["Add & Norm"]
+        En_AddNorm1 --> En_FFN["Feed-Forward<br>Network"]
+        En_FFN --> En_AddNorm2["Add & Norm"]
+
+        %% Input connections (Conceptual - not directly drawn in main flow)
+        En_Input --> En_MultiHead
+
+         %% Output connection (Conceptual - represented by layer stacking in main flow)
+        En_AddNorm2 --> En_Output
+    end
+
+    subgraph Decoder_Layer["Decoder Layer Detail"]
+        style Decoder_Layer fill:#d2f3,stroke:#005a9e,stroke-width:1px
+
+        De_MaskedMultiHead["Masked<br>Multi-Head<br>Self-Attention"] --> De_AddNorm1["Add & Norm"]
+        De_AddNorm1 --> De_EncDecAttn["Multi-Head<br>Encoder-Decoder<br>Attention"]
+        De_EncDecAttn --> De_AddNorm2["Add & Norm"]
+        De_AddNorm2 --> De_FFN["Feed-Forward<br>Network"]
+        De_FFN --> De_AddNorm3["Add & Norm"]
+
+        %% Input Connections (Conceptual)
+        De_Input --> De_MaskedMultiHead
+        De_EncoderOutput --> De_EncDecAttn
+
+        %% Output Connection (Conceptual)
+        De_AddNorm3--> De_Output
+    end
+
+        subgraph Scaled_Dot_Product_Attention["Scaled Dot-Product Attention"]
         style Scaled_Dot_Product_Attention fill:#c8e4,stroke:#43a047,stroke-width:2px
         Attn_Input["Input<br>(Q, K, V)"] --> Attn_ScaledDotProduct["Scaled<br>Dot-Product"]
         Attn_ScaledDotProduct --> Attn_Softmax["Softmax"]
@@ -184,6 +163,8 @@ graph LR
     Attn_Output -.-> Attn_Output_sub:::formulaStyleSubText
     Attn_Output_sub("softmax(QK<sup>T</sup> / √d<sub>k</sub>)V")
 
+    linkStyle 38,41 stroke:#aa3,stroke-width:1px,stroke-dasharray: 5 5
+    
 ```
 
 ---
