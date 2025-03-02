@@ -76,7 +76,7 @@ graph LR
      end
 
     subgraph Encoder_Layer["Encoder Layer Detail"]
-        style Encoder_Layer fill:#ccf3,stroke:#005a9e,stroke-width:1px
+        style Encoder_Layer fill:#2cc33,stroke:#005a9e,stroke-width:1px
         En_MultiHead["Multi-Head<br>Self-Attention"] --> En_AddNorm1["Add & Norm"]
         En_AddNorm1 --> En_FFN["Feed-Forward<br>Network"]
         En_FFN --> En_AddNorm2["Add & Norm"]
@@ -89,7 +89,7 @@ graph LR
     end
 
     subgraph Decoder_Layer["Decoder Layer Detail"]
-        style Decoder_Layer fill:#ddf3,stroke:#005a9e,stroke-width:1px
+        style Decoder_Layer fill:#d2f3,stroke:#005a9e,stroke-width:1px
 
         De_MaskedMultiHead["Masked<br>Multi-Head<br>Self-Attention"] --> De_AddNorm1["Add & Norm"]
         De_AddNorm1 --> De_EncDecAttn["Multi-Head<br>Encoder-Decoder<br>Attention"]
