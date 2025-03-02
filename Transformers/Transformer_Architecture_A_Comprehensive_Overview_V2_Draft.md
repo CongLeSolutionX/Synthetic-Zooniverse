@@ -41,6 +41,9 @@ config:
     }
   }
 }%%
+%%%%%%%% NOTE:
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 graph LR
     subgraph Transformer["Transformer Architecture"]
         style Transformer fill:#e834,stroke:#005a9e,stroke-width:2px
