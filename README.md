@@ -121,6 +121,7 @@ config:
     }
   }
 }%%
+%%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 graph LR
@@ -251,6 +252,7 @@ graph LR
 
 DOI: [10.13140/RG.2.2.14724.03203](http://dx.doi.org/10.13140/RG.2.2.14724.03203)
 
+Note: Mermaid version v11.4.1-b.14
 
 ---
 
