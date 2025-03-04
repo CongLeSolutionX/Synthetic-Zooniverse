@@ -8,7 +8,7 @@ original source: "https://arxiv.org/pdf/2412.19419"
 ---
 
 
-# Introduction to Graph Neural Networks
+# Introduction to Graph Neural Networks: A Starting Point for Machine Learning Engineers
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
@@ -31,6 +31,7 @@ config:
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
