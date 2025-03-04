@@ -8,7 +8,7 @@ original source: "https://arxiv.org/pdf/2412.19419"
 ---
 
 
-# Introduction to Graph Neural Networks
+# Introduction to Graph Neural Networks: A Starting Point for Machine Learning Engineers
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
