@@ -32,6 +32,8 @@ config:
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
