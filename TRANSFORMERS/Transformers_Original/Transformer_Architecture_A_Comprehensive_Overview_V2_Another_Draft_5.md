@@ -46,6 +46,7 @@ config:
     }
   }
 }%%
+%%%%%%%% Mermaid version v11.4.1-b.14
 graph LR
     subgraph Transformer["Transformer Architecture"]
     style Transformer fill:#ec51,stroke:#005a9e,stroke-width:2px

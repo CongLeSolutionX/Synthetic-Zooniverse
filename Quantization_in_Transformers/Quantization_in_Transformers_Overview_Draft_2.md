@@ -37,6 +37,7 @@ Below is my personal notes on the topics and I might gather information from var
     }
   }
 }%%
+%%%%%%%% Mermaid version v11.4.1-b.14
 mindmap
   root(("Quantization Techniques in Transformers - Relationships"))
     Core_Concept["Core Concept:<br>Reducing Precision"]

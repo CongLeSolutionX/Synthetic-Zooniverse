@@ -48,6 +48,7 @@ config:
     }
   }
 }%%
+%%%%%%%% Mermaid version v11.4.1-b.14
 graph LR
     subgraph Phi_4_Multimodal["Phi-4 Multimodal"]
         A[Phi-4-Multimodal] --> B{Multimodality}
