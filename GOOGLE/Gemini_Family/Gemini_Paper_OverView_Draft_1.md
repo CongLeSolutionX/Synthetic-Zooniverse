@@ -9,7 +9,7 @@ original source: "https://arxiv.org/pdf/2312.11805"
 
 
 
-# Gemini: A Family of Highly Capable
+# Gemini: A Family of Highly Capable Multimodal Models
 > **Disclaimer:**
 >
 > This document contains my personal notes on the topic,
