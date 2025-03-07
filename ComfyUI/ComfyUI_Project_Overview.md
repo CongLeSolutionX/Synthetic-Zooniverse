@@ -25,12 +25,9 @@ original source: "https://github.com/comfyanonymous/ComfyUI/blob/master/README.m
 
 
 
-
-
-
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "ComfyUI Project Overview"
 config:
   layout: elk
   look: handDrawn
@@ -53,36 +50,42 @@ flowchart TD
     USR["User"]:::external
 
     %% Frontend Layer
-    subgraph "Frontend Layer"
+    subgraph Frontend_Layer["Frontend Layer"]
+    style Frontend_Layer fill:#4153,stroke:#333,stroke-width:2px
         FE["Frontend (web)"]:::frontend
     end
 
     %% Backend Services
-    subgraph "Backend Services"
+    subgraph Backend_Services["Backend Services"]
+    style Backend_Services fill:#22c1,stroke:#333,stroke-width:2px
         AS["API Server"]:::backend
         APS["Application Services"]:::backend
         MM["Model Manager Implementation"]:::backend
     end
 
     %% Execution Engine
-    subgraph "Execution Engine"
-        CE["Core Execution Engine (comfy)"]:::execution
-        GP["Graph Processing (comfy_execution)"]:::execution
+    subgraph Execution_Engine["Execution Engine"]
+    style Execution_Engine fill:#cc51,stroke:#333,stroke-width:2px
+        CE["Core Execution Engine<br>(comfy)"]:::execution
+        GP["Graph Processing<br>(comfy_execution)"]:::execution
     end
 
     %% Model Management
-    subgraph "Model Management"
-        MS["Models Storage (models)"]:::storage
+    subgraph Model_Management["Model Management"]
+    style Model_Management fill:#cc33,stroke:#333,stroke-width:2px
+        MS["Models Storage<br>(models)"]:::storage
     end
 
     %% CI/CD and Integrations
-    subgraph "CI/CD & Integrations"
-        CI["CI/CD Scripts (.ci)"]:::cicd
-        GH["GitHub Workflows (.github)"]:::cicd
+    subgraph CI_CD_and_Integrations["CI/CD & Integrations"]
+    style CI_CD_and_Integrations fill:#cf33,stroke:#333,stroke-width:2px
+        CI["CI/CD Scripts<br>(.ci)"]:::cicd
+        GH["GitHub Workflows<br>(.github)"]:::cicd
     end
 
     %% Additional Tools and Utilities
-    subgraph "Additional Tools & Utilities"
+    subgraph Additional_Tools_and_Utilities["Additional Tools & Utilities"]
+    style Additional_Tools_and_Utilities fill:#cfc3,stroke:#333,stroke-width:2px
         TST["Tests"]:::tools
         NB["Notebooks"]:::tools
         SE["Script Examples"]:::tools
@@ -91,13 +94,13 @@ flowchart TD
 
     %% Data Flow Connections
     USR -->|"initiates"| FE
-    FE -->|"API_call"| AS
+    FE -->|"API call"| AS
     AS -->|"triggers"| APS
     APS -->|"executes"| CE
-    CE -->|"processes_graph"| GP
-    APS -->|"manages_models"| MM
-    MM -->|"loads_models"| MS
-    CE -->|"fetches_models"| MS
+    CE -->|"processes graph"| GP
+    APS -->|"manages models"| MM
+    MM -->|"loads models"| MS
+    CE -->|"fetches models"| MS
 
     %% CI/CD Integration (dashed to indicate external support)
     CI -.-> APS
@@ -126,7 +129,7 @@ flowchart TD
     click NB "https://github.com/comfyanonymous/comfyui/tree/master/notebooks"
     click SE "https://github.com/comfyanonymous/comfyui/tree/master/script_examples"
     click UT "https://github.com/comfyanonymous/comfyui/tree/master/utils"
-     
+    
 ```
 
 
