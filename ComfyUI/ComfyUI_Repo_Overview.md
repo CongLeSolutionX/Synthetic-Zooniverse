@@ -180,6 +180,36 @@ style Keyboard_Shortcuts fill:#f2b3,stroke:#333,stroke-width:1px;
 
 ```
 
+----
+
+
+### Key improvements and explanations of each node and what it represents:
+
+*   **A \[ComfyUI]:** The central concept: the visual AI engine itself.
+*   **B {Core Concept}:** Summarizes ComfyUI's primary function.
+*   **C \[Visual AI Engine & Application]:** High-level description.
+*   **CA \[Powerful & Modular]:** Qualities of the engine.
+*   **CB \[Graph/Nodes/Flowchart Interface]:** The method of interaction.
+*   **CC \[Stable Diffusion Pipelines]:** Main use case.
+*   **D {Key Features}:** Categorizes the capabilities.
+*   **E \[Image Models], F \[Video Models], G \[Audio Models]:** Model types.
+*   **EA, EB, etc.:** Specific model names within each category.
+*   **H \[Core Functionality]:** Non-model-specific features.
+*   **HA, HB, etc.:** Specific core functionalities.
+*   **I {Installation}:** Installation methods.
+*   **J \[Desktop Application], K \[Windows Portable Package], L \[Manual Install]:** The specific installation methods, along with brief descriptions.
+*   **JA, KB, LA, etc.:** Key characteristics or considerations for each method.
+*   **M {Running ComfyUI}:** Explains how to launch the application.
+*   **N \[Basic Command], O \[AMD-Specific Flags], P \[AMD ROCm Tips], Q \[Additional Environment Variables]:** Specific commands and flags for running the engine in different scenarios.
+*   **NA, OA, PA, QA, etc.:** Describe the purpose and syntax of each command.
+*   **R {Frontend Information}:** Specifies the source for the frontend and ways to select different versions.
+*   **S \[Frontend Repository], T \[Frontend Version Control], U \[Legacy Frontend]:** Components of the frontend and methods for selecting them.
+*   **SA, TA, UA, etc.:** Additional instructions for accessing the frontend.
+*   **V {Useful Keyboard Shortcuts}:** List of keyboard shortcuts.
+*   **VA \[Ctrl + Enter], VB \[Queue graph for generation]:** Specific keyboard shortcuts, along with their functions.
+*   **W {Troubleshooting}:** Troubleshooting tips for the engine.
+*   **XA \[Discord], XB \[Matrix space]:** Support Channels
+
 
 
 ---
