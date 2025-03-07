@@ -26,7 +26,7 @@ original source: "https://github.com/comfyanonymous/ComfyUI/blob/master/README.m
 
 ```mermaid
 ---
-title: "CHANGE_ME_DADDY"
+title: "ComfyUI Repo - A Diagrammatic Guide"
 config:
   layout: elk
   look: handDrawn
