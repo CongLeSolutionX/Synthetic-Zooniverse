@@ -28,7 +28,7 @@ original source: "https://arxiv.org/pdf/2103.00020"
 
 ```mermaid
 ---
-title: "Text Encoder"
+title: "CLIP - Learning Transferable Visual Models From Natural Language Supervision"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"

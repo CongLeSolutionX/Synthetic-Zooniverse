@@ -26,7 +26,7 @@ original source: "https://arxiv.org/pdf/2103.00020"
 
 ```mermaid
 ---
-title: "Image Encoder"
+title: "CLIP - Learning Transferable Visual Models From Natural Language Supervision"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY 4.0"
@@ -55,7 +55,7 @@ config:
   }
 }%%
 graph TD
-    A[Image Encoder] --> B{Architectures};
+    A["Image Encoder"] --> B{"Architectures"}
     
     subgraph ResNet_Encoder ["ResNet-Based Encoder"]
     style ResNet_Encoder fill:#f2b3,stroke:#333,stroke-width:1px;
