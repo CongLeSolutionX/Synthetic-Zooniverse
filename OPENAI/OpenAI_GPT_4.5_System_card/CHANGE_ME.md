@@ -1,10 +1,10 @@
 ---
-created: 2025-03-02 05:31:26
+created: 2025-03-10 05:31:26
 author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-original source: "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf"
+original source: "https://arxiv.org/pdf/2103.00020"
 ---
 
 
@@ -21,7 +21,7 @@ original source: "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf"
 ---
 
 
-## - A Diagrammatic Guide 
+## A Diagrammatic Guide 
 
 ---
 **Licenses:**
