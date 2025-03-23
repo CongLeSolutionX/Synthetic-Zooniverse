@@ -89,11 +89,34 @@ DOI:[10.13140/RG.2.2.30746.76481](http://dx.doi.org/10.13140/RG.2.2.30746.76481)
 
 ```mermaid
 ---
+title: "Fin-R1 - Transformer Layer Detail"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "graph": { "htmlLabels": true, 'curve': 'natural' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 graph LR
     subgraph Transformer_Layer["Transformer Layer (x28)"]
     style Transformer_Layer fill:#ccf3,stroke:#333,stroke-width:2px
@@ -242,11 +265,34 @@ The Feed-Forward Network diagram remains the same, as it's a standard component.
 
 ```mermaid
 ---
+title: "Fin-R1 - Feed-Forward Network"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "graph": { "htmlLabels": true, 'curve': 'natural' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 graph LR
     subgraph FFN["Feed-Forward Network"]
     style FFN fill:#99f,stroke:#333,stroke-width:2px
@@ -268,12 +314,35 @@ The Special Tokens diagram is also unchanged, as it accurately reflects the info
 
 ```mermaid
 ---
+title: "Fin-R1 - Special Tokens"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
-graph TD
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "graph": { "htmlLabels": true, 'curve': 'natural' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
+graph LR
     subgraph Special_Tokens["Special Tokens"]
     style Special_Tokens fill:#d9f,stroke:#333,stroke-width:2px
         A("<|endoftext|>") --> A1[ID: 151643];
@@ -316,11 +385,34 @@ The Configuration Parameters diagram is also accurate and doesn't require change
 
 ```mermaid
 ---
+title: "Fin-R1 - Configuration Parameters"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "graph": { "htmlLabels": true, 'curve': 'natural' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 graph LR
     subgraph Configuration["Key Configuration Parameters (config.json)"]
       style Configuration fill:#aaf,stroke:#333,stroke-width:2px
@@ -350,11 +442,34 @@ The Generation Configuration diagram accurately reflects the generation settings
 
 ```mermaid
 ---
+title: "Fin-R1 - Generation Configuration"
+author: "Cong Le"
+version: "1.0"
+license(s): "MIT, CC BY 4.0"
+copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   look: handDrawn
   theme: dark
 ---
+%%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Toggle theme value to `base` to activate the initilization below for the customized theme version.
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
+%%{
+  init: {
+    "graph": { "htmlLabels": true, 'curve': 'natural' },
+    'fontFamily': 'Fantasy',
+    'themeVariables': {
+      'primaryColor': '#ffff',
+      'primaryTextColor': '#55ff',
+      'primaryBorderColor': '#7c2',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff'
+    }
+  }
+}%%
 graph LR
     subgraph Generation_Configuration["Generation Configuration"]
     style Generation_Configuration fill:#f2bf,stroke:#333,stroke-width:1px;
