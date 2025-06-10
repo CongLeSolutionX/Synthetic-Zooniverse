@@ -294,6 +294,32 @@ We welcome contributions! If you have new insights, model implementations, or re
 
 ---
 
+## 🚀 Project Current Activities
+
+<div align="left"><a name="project-current-activities"></a>
+
+<details open>
+<summary>Click to show/hide more on recent activities of this project </summary>
+
+> powered by [OSS Insight](https://ossinsight.io)
+<!-- All the diagrams below are made with [OSS Insight](https://ossinsight.io/) -->
+
+| :bar_chart: Widget & Description | :art: Snapshot (Light Mode) |
+|---|---|
+| Active Contributors :technologist: of CongLeSolutionX/Synthetic-Zooniverse - Last 28 days | ![Active Contributors of CongLeSolutionX/Synthetic-Zooniverse - Last 28 days](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors/thumbnail.png?repo_id=932142266&limit=30&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/compose-recent-active-contributors?repo_id=932142266&limit=30) |
+| Pushes :arrow_up: and Commits :writing_hand: of CongLeSolutionX/Synthetic-Zooniverse | ![Pushes and Commits of CongLeSolutionX/Synthetic-Zooniverse](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month/thumbnail.png?repo_id=932142266&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pushes-and-commits-per-month?repo_id=932142266) |
+| Pull Request Size :straight_ruler: of CongLeSolutionX/Synthetic-Zooniverse | ![Pull Request Size of CongLeSolutionX/Synthetic-Zooniverse](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month/thumbnail.png?repo_id=932142266&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-requests-size-per-month?repo_id=932142266) |
+| Pull Request Lifecycle :arrows_counterclockwise: of CongLeSolutionX/Synthetic-Zooniverse | ![Pull Request Lifecycle of CongLeSolutionX/Synthetic-Zooniverse](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged/thumbnail.png?repo_id=932142266&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-pull-request-open-to-merged?repo_id=932142266) |
+| Lines of Code Changes :computer::scroll: of CongLeSolutionX/Synthetic-Zooniverse | ![Lines of Code Changes of CongLeSolutionX/Synthetic-Zooniverse](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month/thumbnail.png?repo_id=932142266&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-loc-per-month?repo_id=932142266) |
+| Commits Time Distribution :alarm_clock::date: of CongLeSolutionX/Synthetic-Zooniverse | ![Commits Time Distribution of CongLeSolutionX/Synthetic-Zooniverse](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution/thumbnail.png?repo_id=932142266&period=last_1_year&zone=0&image_size=auto&color_scheme=light) <br/> :link: [View Full Report :mag:](https://next.ossinsight.io/widgets/official/analyze-repo-commits-time-distribution?repo_id=932142266&period=last_1_year&zone=0) | 
+
+</details>
+
+</div>
+
+
+----
+
 ## License
 
 -   Code files within this repository are licensed under the [MIT License](LICENSE).
