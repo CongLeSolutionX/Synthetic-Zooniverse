@@ -44,7 +44,7 @@ config:
     }
   }
 }%%
-graph TD
+graph LR
     A[ComfyUI] --> B{Core Concept};
     style A fill:#a2d3,stroke:#333,stroke-width:1px
     B --> C[Visual AI Engine & Application]:::detail;
