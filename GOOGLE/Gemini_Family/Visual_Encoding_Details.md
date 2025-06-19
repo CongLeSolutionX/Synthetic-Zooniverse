@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 original source: "https://arxiv.org/pdf/2312.11805"
 ---
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress
+> 
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTg3NnhjbXA2NGI0Zzd4NXBvMDJzY2RxcmdlNnFybGJudzRudXFmaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zZg05JXw0PR6Pod1NC/giphy.gif)
+>
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+
+----
 
 
 # Visual Encoding Details

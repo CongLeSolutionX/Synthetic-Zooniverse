@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 original source: "https://arxiv.org/pdf/2312.11805"
 ---
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress
+> 
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZTZnam9iYmUzenpzajg2aXp5aWdpeWFtMmhlaGJ6dnMwYzNjM2x0eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26u4dLe5AG12lAnTy/giphy.gif)
+>
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+
+----
 
 
 # Transformer Decoder Architecture

@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 original source: "https://arxiv.org/pdf/2312.11805"
 ---
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress
+> 
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTFkc2hhaHlrazRiZXZ6cnBlbzdpd2hmZm40MHQ4aXQyOWhpend6dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ov9jWs5B1NI2voeuk/giphy.gif)
+>
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+
+----
 
 
 # Spectrogram Architecture - Synthetic Info

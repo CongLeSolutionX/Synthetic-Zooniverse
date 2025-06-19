@@ -7,6 +7,18 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 original source: "https://arxiv.org/pdf/2312.11805"
 ---
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress
+> 
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2s0ejZoOTQyaDE4eWpiNnpxN3FtNjV1MzloenF0b3BqN29vYW93OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l1J9NSnTNbdyaOZag/giphy.gif)
+>
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+
+----
 
 
 # SentencePiece Tokenizer used for Gemini Model family
