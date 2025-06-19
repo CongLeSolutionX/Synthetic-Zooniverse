@@ -169,7 +169,7 @@ flowchart LR
 
         G2_5P["Gemini 2.5 Pro"] --> F2_5P1["Input:<br/>📜🖼️🎬🔊<br/>(1M tokens)"]
         G2_5P --> F2_5P2["Output:<br/> 📜🔊 <br/>(64K tokens)"]
-        G2_5P --> F2_5P3["💡 Thinking: Yes <br/>(Controllable)"]
+        G2_5P --> F2_5P3["💡 Thinking:<br/> Yes <br/>(Controllable)"]
         G2_5P --> F2_5P4["🔧 Tool Use:<br/>Yes"]
         G2_5P --> F2_5P5["🗓️ Cutoff:<br/>Jan 2025"]
     end
