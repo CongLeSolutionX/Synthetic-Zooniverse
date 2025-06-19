@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://arxiv.org/abs/2212.08073
+source: https://arxiv.org/pdf/2212.08073
 ---
 
 
