@@ -9,6 +9,20 @@ original source:
 
 
 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress
+> 
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzVmdXpwaWpvb2Mwa3ZlZ3kyb3I2YmJvMjhram4zeG1nbGZjNWF2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YnvmWhlOMXPDMeswb7/giphy.gif)
+>
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+
+----
+
+
 # CHANGE_ME
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
