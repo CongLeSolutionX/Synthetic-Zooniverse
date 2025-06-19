@@ -132,26 +132,26 @@ flowchart TD
     Input --> SL_Stage
     SL_Stage --> RL_Stage
 
-    classDef Initial_Model fill:#D6EAF8,stroke:#333,stroke-width:2px
-    classDef Pretrained_LM fill:#E8DAEF,stroke:#333,stroke-width:2px
-    classDef Constitutional_Principles fill:#FEF9E7,stroke:#333,stroke-width:2px
-    classDef Harmfulness_Prompts fill:#FADBD8,stroke:#333,stroke-width:2px
-    classDef Helpfullness_Prompts fill:#D5F5E3,stroke:#333,stroke-width:2px
+    %% classDef Initial_Model fill:#D6F8,stroke:#333,stroke-width:2px
+    %% classDef Pretrained_LM fill:#E8DAEF,stroke:#333,stroke-width:2px
+    %% classDef Constitutional_Principles fill:#FEF9E7,stroke:#333,stroke-width:2px
+    %% classDef Harmfulness_Prompts fill:#FADBD8,stroke:#333,stroke-width:2px
+    %% classDef Helpfullness_Prompts fill:#D5F5E3,stroke:#333,stroke-width:2px
     
-    classDef SL_CAI_Model fill:#D1F2EB,stroke:#2ECC71,stroke-width:4px
-    classDef Finetuned_PM fill:#FCF3CF,stroke:#F39C12,stroke-width:4px
-    classDef RL_CAI_Model fill:#D6EAF8,stroke:#3498DB,stroke-width:4px
+    %% classDef SL_CAI_Model fill:#D1F2EB,stroke:#2ECC71,stroke-width:4px
+    %% classDef Finetuned_PM fill:#FCF3CF,stroke:#F39C12,stroke-width:4px
+    %% classDef RL_CAI_Model fill:#D6EAF8,stroke:#3498DB,stroke-width:4px
 
-    classDef component fill:#f9f,stroke:#333,stroke-width:2px;
+    %% classDef component fill:#f9f2,stroke:#333,stroke-width:2px;
     class A,B,L,Q,S component
     
-    classDef process fill:#fff,stroke:#333,stroke-width:2px,color:#333
+    classDef process fill:#F39C12,stroke:#333,stroke-width:2px,color:#333
     class F,H,I,K,M,N,P,R process
     
-    classDef data fill:#eee,stroke:#333,stroke-width:2px,color:#555;
+    classDef data fill:#92DD,stroke:#333,stroke-width:2px,color:#FFFF;
     class C,D,E,J,O,HF data
     
-    classDef decision fill:#ffc,stroke:#333,stroke-width:2px
+    classDef decision fill:#F3CF,stroke:#333,stroke-width:2px
     class G decision
 ```
 
