@@ -4,7 +4,8 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
----
+original source: 
+
 
 
 > ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
@@ -19,9 +20,6 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 ----
-
-
-
 
 # CHANGE_ME
 <details open>
@@ -38,11 +36,10 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 </details>
 
----
+-----
 
 
 ## MAIN CONTENT - A Diagrammatic Guide 
-
 
 
 ----
@@ -81,12 +78,10 @@ flowchart LR
   Closing_quote@{ shape: braces, label: "..👀..<br/>'Unfortunately,<br/>no one can be told<br/> what the Matrix is.<br/>You have to see it<br/>for yourself'<br/>...📚..<br/>-<ins>Morpheus,<br/>a character from the movie The Matrix 1999</ins>"}
 
    Closing_quote ~~~ My_Meme
-
-    My_Meme animatingEdge@--> Link_to_my_profile
-  
-  animatingEdge@{ animate: true }
-
-```
+   
+   My_Meme animatingEdge@--> Link_to_my_profile
+   
+   animatingEdge@{ animate: true }
 
 ---
 ><b>Licenses</b>:
