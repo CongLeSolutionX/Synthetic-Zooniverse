@@ -1,12 +1,10 @@
 ---
-created: 2025-06-18 05:31:26
+created: 2025-06-17 05:31:26
 author: Cong Le
 version: "1.0"
-license(s): MIT, CC BY 4.0
+license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-original source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf"
 ---
-
 
 
 > ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
@@ -21,6 +19,9 @@ original source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claud
 
 
 ----
+
+
+
 
 # CHANGE_ME
 <details open>
@@ -39,10 +40,12 @@ original source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claud
 
 ---
 
-## - A Diagrammatic Guide 
+
+## MAIN CONTENT - A Diagrammatic Guide 
+
+
 
 ----
-
 
 ```mermaid
 ---
