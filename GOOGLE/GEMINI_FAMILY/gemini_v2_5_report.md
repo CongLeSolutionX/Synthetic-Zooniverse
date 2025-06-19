@@ -137,7 +137,7 @@ flowchart LR
     subgraph Gemini_Family["Gemini Model Family & Key Features"]
     style Gemini_Family fill:#f222,stroke:#333,stroke-width:2px, color: #FFFF
     direction LR
-        G1_5F["Gemini 1.5 Flash"] --> F1_5F1["Input:<br/>📜🖼️🎬🔊<br/>1M tokens)"]
+        G1_5F["Gemini 1.5 Flash"] --> F1_5F1["Input:<br/>📜🖼️🎬🔊<br/>(1M tokens)"]
         G1_5F --> F1_5F2["Output:<br/>📜<br/>(8K tokens)"]
         G1_5F --> F1_5F3["💡 Thinking:<br/> No"]
         G1_5F --> F1_5F4["🔧 Tool Use:<br/> No"]
