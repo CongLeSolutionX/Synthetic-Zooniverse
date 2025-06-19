@@ -1,13 +1,25 @@
 ---
-created: 2025-03-04 05:31:26
+created: 2025-06-18 05:31:26
 author: Cong Le
 version: "1.0"
-license(s): MIT, CC BY 4.0
+license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 original source: 
----
 
 
+
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+> 
+> This is a working draft in progress
+> 
+> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVjejV3dnVjc2o5MXd3eXBvcDR1cHlzbHQ1Z2R6YjY0ZHpmdjJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hL9q5k9dk9l0wGd4e0/giphy.gif)
+>
+> gif image is provided by [Giphy](https://giphy.com)
+> 
+> ⚠️🏗️🚧🦺🧱🪵🪨🪚🛠️👷
+
+
+----
 
 # CHANGE_ME
 <details open>
@@ -24,14 +36,13 @@ original source:
 
 </details>
 
----
+-----
 
 
 ## MAIN CONTENT - A Diagrammatic Guide 
 
 
----
-
+----
 
 ```mermaid
 ---
@@ -67,12 +78,10 @@ flowchart LR
   Closing_quote@{ shape: braces, label: "..👀..<br/>'Unfortunately,<br/>no one can be told<br/> what the Matrix is.<br/>You have to see it<br/>for yourself'<br/>...📚..<br/>-<ins>Morpheus,<br/>a character from the movie The Matrix 1999</ins>"}
 
    Closing_quote ~~~ My_Meme
-
-    My_Meme animatingEdge@--> Link_to_my_profile
-  
-  animatingEdge@{ animate: true }
-
-```
+   
+   My_Meme animatingEdge@--> Link_to_my_profile
+   
+   animatingEdge@{ animate: true }
 
 ---
 ><b>Licenses</b>:
