@@ -137,7 +137,7 @@ flowchart LR
     subgraph Gemini_Family["Gemini Model Family & Key Features"]
     style Gemini_Family fill:#f222,stroke:#333,stroke-width:2px, color: #FFFF
     direction LR
-        G1_5F["Gemini 1.5 Flash"] --> F1_5F1["Input:<br/>📜🖼️🎬🔊<br/>1M tokens)"]
+        G1_5F["Gemini 1.5 Flash"] --> F1_5F1["Input:<br/>📜🖼️🎬🔊<br/>(1M tokens)"]
         G1_5F --> F1_5F2["Output:<br/>📜<br/>(8K tokens)"]
         G1_5F --> F1_5F3["💡 Thinking:<br/> No"]
         G1_5F --> F1_5F4["🔧 Tool Use:<br/> No"]
@@ -169,7 +169,7 @@ flowchart LR
 
         G2_5P["Gemini 2.5 Pro"] --> F2_5P1["Input:<br/>📜🖼️🎬🔊<br/>(1M tokens)"]
         G2_5P --> F2_5P2["Output:<br/> 📜🔊 <br/>(64K tokens)"]
-        G2_5P --> F2_5P3["💡 Thinking: Yes <br/>(Controllable)"]
+        G2_5P --> F2_5P3["💡 Thinking:<br/> Yes <br/>(Controllable)"]
         G2_5P --> F2_5P4["🔧 Tool Use:<br/>Yes"]
         G2_5P --> F2_5P5["🗓️ Cutoff:<br/>Jan 2025"]
     end
@@ -270,7 +270,10 @@ config:
   }
 }%%
 flowchart LR
-    InputToken --> Router
+    InputToken["Input Token"]
+	OutputToken["Output Token"]
+
+	InputToken --> Router
     Router -- "Token 1" --> Expert1["Expert 1<br/>(Parameters E1)"]
     Router -- "Token 1" --> Expert3["Expert 3<br/>(Parameters E3)"]
     Router -- "Token 2" --> Expert2["Expert 2<br/>(Parameters E2)"]
