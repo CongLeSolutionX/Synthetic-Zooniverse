@@ -270,7 +270,10 @@ config:
   }
 }%%
 flowchart LR
-    InputToken --> Router
+    InputToken["Input Token"]
+	OutputToken["Output Token"]
+
+	InputToken --> Router
     Router -- "Token 1" --> Expert1["Expert 1<br/>(Parameters E1)"]
     Router -- "Token 1" --> Expert3["Expert 3<br/>(Parameters E3)"]
     Router -- "Token 2" --> Expert2["Expert 2<br/>(Parameters E2)"]
