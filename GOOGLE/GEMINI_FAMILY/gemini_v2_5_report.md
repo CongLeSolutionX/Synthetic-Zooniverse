@@ -277,11 +277,13 @@ flowchart LR
     Router -- "Token 2" --> ExpertN["Expert N<br/>(Parameters EN)"]
 
     subgraph Activated_Experts["Activated Experts"]
+    style Activated_Experts fill:#2FF2,stroke:#333,stroke-width:2px, color: #FFFF
         Expert1
         Expert3
     end
 
     subgraph Inactive_Experts["Inactive Experts"]
+    style Inactive_Experts fill:#f222,stroke:#333,stroke-width:2px, color: #FFFF
         Expert2
         ExpertN
         ExpertOther["..."]
@@ -292,10 +294,10 @@ flowchart LR
 
     Combine --> OutputToken
 
-    style Router fill:#lightgrey,stroke:#333,stroke-width:2px
-    style Expert1 fill:#lightblue,stroke:#333,stroke-width:2px
-    style Expert3 fill:#lightblue,stroke:#333,stroke-width:2px
-    style Combine fill:#lightgreen,stroke:#333,stroke-width:2px
+    style Router fill:#2F22,stroke:#333,stroke-width:2px
+    style Expert1 fill:#22BB,stroke:#333,stroke-width:2px
+    style Expert3 fill:#22BB,stroke:#333,stroke-width:2px
+    style Combine fill:#2F22,stroke:#333,stroke-width:2px
 ```
 
 *Caption: Simplified Sparse MoE. The Router sends each input token to a small subset of 'experts'. Only activated experts compute for that token.*
@@ -424,7 +426,7 @@ flowchart TD
     C -.-> Z["Model Update"]
 
     subgraph Software_Advances["Software Advances"]
-    style Software_Advances fill:#e6fffa,stroke:#00796b,stroke-width:2px
+    style Software_Advances fill:#2FF2,stroke:#00796b,stroke-width:2px, color: #FFFF
         E
         I
     end
@@ -562,6 +564,7 @@ flowchart TD
     B -- "No/Low Budget or Simple Query" --> E
 
     subgraph RL_Training_for_Thinking["RL Training for Thinking"]
+    style RL_Training_for_Thinking fill:#2FF2,stroke:#00796b,stroke-width:2px, color: #FFFF
     direction LR
         RL1["Reinforcement Learning"] --> RL2{"Learn when & how much to <b>think</b>"}
         RL2 --> RL3["Optimize for accuracy given compute"]
@@ -700,11 +703,13 @@ config:
 }%%
 flowchart LR
     subgraph GameEnv["Pokémon Blue<br/>(Game Boy)"]
+    style GameEnv fill:#2FF2,stroke:#00796b,stroke-width:2px, color: #FFFF
         Screen["Game Screen<br/>(Screenshot)"]
         RAM["Game State<br/>(RAM)"]
     end
 
     subgraph AgentCore["Agentic Core<br/>(Gemini 2.5 Pro)"]
+    style AgentCore fill:#2BB2,stroke:#796b,stroke-width:2px, color: #FFFF
     direction LR
         MainAgent["Main Agent Logic"]
         Memory["Persistent Memory & Context"]
@@ -724,13 +729,15 @@ flowchart LR
     MainAgent --> ButtonPresses["Execute Button Presses"]
     ButtonPresses --> GameEnv
 
-    subgraph PeriodicProcesses
-        Guidance["Guidance Gemini<br/>(Critique / 25 turns)"]
+    subgraph PeriodicProcesses["Periodic Processes"]
+    style PeriodicProcesses fill:#DD22,stroke:#796b,stroke-width:2px, color: #FFFF
+      Guidance["Guidance Gemini<br/>(Critique / 25 turns)"]
     end
     Memory --> Guidance
     Guidance --> MainAgent
 
     subgraph AgenticTools["Agentic Tools<br/>(Prompted Gemini 2.5 Pro Instances)"]
+    style AgenticTools fill:#DEF2,stroke:#796b,stroke-width:2px, color: #FFFF
         Pathfinder["Pathfinder<br/>(Navigation)"]
         BoulderPuzzle["Boulder Puzzle Strategist"]
     end
@@ -925,20 +932,27 @@ config:
 sequenceDiagram
     actor Attacker
     actor User
-    participant GeminiAgent as "Gemini-based AI Agent"
-    participant UserEmailServer as "User's Email Server"
-    participant AttackerEmailServer as "Attacker's Email Server"
+
+    box rgb(202, 12, 22, 0.1) The System
+      participant GeminiAgent as Gemini-based AI Agent
+      participant UserEmailServer as User's Email Server
+      participant AttackerEmailServer as Attacker's Email Server
+    end
 
     Attacker->>UserEmailServer: Sends email with hidden malicious prompt
     User->>GeminiAgent: "Summarize my latest emails"
-    GeminiAgent->>UserEmailServer: Retrieve latest email (contains malicious prompt)
+    GeminiAgent->>UserEmailServer: Retrieve latest email <br/>(contains malicious prompt)
     UserEmailServer-->>GeminiAgent: Provides email content
 
     alt Attack Successful
-        GeminiAgent->>UserEmailServer: (Processes malicious prompt) Sends email with user's secrets
+      rect rgb(200, 15, 255, 0.1)
+        GeminiAgent->>UserEmailServer: (Processes malicious prompt)<br/>Sends email with user's secrets
         UserEmailServer-->>AttackerEmailServer: Delivers email with exfiltrated secrets
+      end
     else Attack Unsuccessful
-        GeminiAgent->>User: Provides summary of the email (ignores malicious prompt)
+      rect rgb(200, 15, 255, 0.4)
+        GeminiAgent->>User: Provides summary of the email<br/>(ignores malicious prompt)
+      end
     end
 ```
 
