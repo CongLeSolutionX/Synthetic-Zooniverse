@@ -124,6 +124,7 @@ config:
 }%%
 flowchart LR
     subgraph Legend["Legend"]
+    style Legend fill:#f3f2,stroke:#333,stroke-width:2px, color: #FFFF
         L1["📜 Text"]
         L2["🖼️ Image"]
         L3["🎬 Video"]
@@ -134,6 +135,7 @@ flowchart LR
     end
 
     subgraph Gemini_Family["Gemini Model Family & Key Features"]
+    style Gemini_Family fill:#f222,stroke:#333,stroke-width:2px, color: #FFFF
     direction LR
         G1_5F["Gemini 1.5 Flash"] --> F1_5F1["Input:<br/>📜🖼️🎬🔊<br/>1M tokens)"]
         G1_5F --> F1_5F2["Output:<br/>📜<br/>(8K tokens)"]
@@ -171,7 +173,7 @@ flowchart LR
         G2_5P --> F2_5P4["🔧 Tool Use:<br/>Yes"]
         G2_5P --> F2_5P5["🗓️ Cutoff:<br/>Jan 2025"]
     end
-    classDef default fill:#f9f2,stroke:#333,stroke-width:2px;
+    classDef default fill:#f9f2,stroke:#333,stroke-width:2px
 ```
 
 *Note: `*` indicates features currently limited to Experimental or Preview.*
