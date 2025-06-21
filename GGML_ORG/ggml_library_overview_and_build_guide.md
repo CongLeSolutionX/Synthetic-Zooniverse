@@ -386,7 +386,9 @@ flowchart TD
     style G fill:#9E92,stroke:#239B56
 ```
 
-*Note: Ensure `/usr/local/cuda-12.1/bin/nvcc` points to your actual CUDA compiler path.*
+
+> [!NOTE]
+> Ensure `/usr/local/cuda-12.1/bin/nvcc` points to your actual CUDA compiler path.
 
 ### Using hipBLAS (AMD GPUs - ROCm) 🔴
 
