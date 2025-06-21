@@ -91,7 +91,13 @@ flowchart TD
     style E fill:#ff9,stroke:#333,stroke-width:2px,color:#333
 ```
 
-A little note on `ggml`: As a tensor library, `ggml` is designed for numerical computation, which is the heart of machine learning. Tensors are multi-dimensional arrays, and operations on them, like matrix multiplication ($C = AB$) or more complex tensor contractions ($T_{i_1…i_n} = \sum_{j_1…j_m} A_{i_1…k_p…i_n} B_{j_1…k_p…j_m}$), are fundamental for neural network calculations. The efficiency of these operations is key for model performance.
+> :clipboard: **A little note on `ggml`:**
+> 
+> As a tensor library, `ggml` is designed for numerical computation, which is the heart of machine learning.<br/>
+> Tensors are multi-dimensional arrays, and operations on them,
+> like matrix multiplication ($C = AB$)<br/> or more complex tensor contractions ($T_{i_1…i_n} = \sum_{j_1…j_m} A_{i_1…k_p…i_n} B_{j_1…k_p…j_m}$),
+> are fundamental for neural network calculations.<br/>
+> The efficiency of these operations is key for model performance.
 
 ----
 
