@@ -156,7 +156,7 @@ config:
       'leftPadding': 200,
       'gridLineStartPadding': 25,
       'sectionFontSize': 15,
-      'numberSectionStyles': 4,
+      'numberSectionStyles': 2,
       'axisFormat': '%Y',
       'topAxis': true,
       'weekday': 'sunday'
