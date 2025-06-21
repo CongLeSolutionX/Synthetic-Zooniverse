@@ -206,13 +206,21 @@ flowchart LR
     %% $$ \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t $$
 ```
 
-**Note on Quantization**: Integer quantization is a process that can significantly reduce the memory footprint and computational cost of neural network models. It involves converting model weights and/or activations from floating-point numbers (e.g., 32-bit floats) to lower-precision integers (e.g., 8-bit integers). A simplified linear quantization might follow:
-$$
-\text{value}_{\text{quantized}} = \text{round}\left(\frac{\text{value}_{\text{float}}}{\text{scale}}\right) + \text{zero_point}
-$$
-where `scale` and `zero_point` are quantization parameters.
+> **Note on Quantization**
+> 
+> Integer quantization is a process that can significantly reduce the memory footprint and computational cost of neural network models.<br/>
+> It involves converting model weights and/or activations from floating-point numbers<br/>
+> (e.g., 32-bit floats) to lower-precision integers (e.g., 8-bit integers).<br/>
+> A simplified linear quantization might follow:<br/>
 
-**Note on Automatic Differentiation**: This is a technique that allows for the automatic computation of gradients (derivatives) of functions defined by computer programs. It's the backbone of training most neural networks, enabling algorithms like backpropagation. Optimizers like ADAM (Adaptive Moment Estimation) and L-BFGS (Limited-memory Broyden–Fletcher–Goldfarb–Shanno) use these gradients to iteratively adjust model parameters to minimize a loss function.
+> $$\text{value}_{\text{quantized}} = \text{round}\left(\frac{\text{value}_{\text{float}}}{\text{scale}}\right) + \text{zero_point}$$
+> where `scale` and `zero_point` are quantization parameters.
+
+> **Note on Automatic Differentiation**
+> 
+> This is a technique that allows for the automatic computation of gradients (derivatives) of functions defined by computer programs.<br/>
+> It's the backbone of training most neural networks, enabling algorithms like backpropagation.<br/>
+> Optimizers like ADAM (Adaptive Moment Estimation) and L-BFGS (Limited-memory Broyden–Fletcher–Goldfarb–Shanno) use these gradients to iteratively adjust model parameters to minimize a loss function.
 
 ----
 
