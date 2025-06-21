@@ -12,7 +12,7 @@ source: https://github.com/ggml-org/whisper.cpp
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGN5bjVmMmlyZzF3MDh6dW9kd3hjNnZvb3l5anMxMXFlNmt6a2R1ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT39CSrbCLKaQJ2MqQ/giphy.gif)
+> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaTFnNnAyemJrdDRpMnFib2ZlNXJ3bmEwZnk5NWZ3aDc2azhxdzR0bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ggREjp7UHSmnaL6e1p/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
