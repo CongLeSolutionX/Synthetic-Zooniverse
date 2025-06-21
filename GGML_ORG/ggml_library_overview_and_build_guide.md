@@ -4,6 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
+source: https://github.com/ggml-org/ggml/blob/master/README.md
 ---
 
 
@@ -20,7 +21,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 ----
 
-# 🐑 `ggml`: A Tensor Library for Machine Learning
+# :bookmark_tabs:`ggml` library overview and build guide
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -37,7 +38,7 @@ copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
 
 
 ---
-
+## 🐑 `ggml`: A Tensor Library for Machine Learning
 `ggml` is a tensor library designed for machine learning tasks. It's noteworthy for its focus on efficiency, broad hardware compatibility, and minimal dependencies. As highlighted, it's under active development, with significant contributions also seen in projects like [llama.cpp](https://github.com/ggerganov/llama.cpp) and [whisper.cpp](https://github.com/ggerganov/whisper.cpp).
 
 You can check out the project's direction via its [Roadmap](https://github.com/users/ggerganov/projects/7) and underlying philosophy in its [Manifesto](https://github.com/ggerganov/llama.cpp/discussions/205).
