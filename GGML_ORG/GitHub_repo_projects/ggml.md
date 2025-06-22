@@ -76,62 +76,69 @@ config:
 }%%
 flowchart TD
     %% Build-time flow
-    subgraph "Build System"
-        direction TB
-        CMakeLists["CMakeLists.txt"]:::tool
-        CMakeDir["cmake/"]:::tool
+    subgraph Build_System["Build System"]
+    style Build_System fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      CMakeLists["<b>CMakeLists.txt</b>"]:::tool
+      CMakeDir["<b>cmake/</b>"]:::tool
     end
 
-    subgraph "Core Tensor Engine"
-        direction TB
-        GGML_C["ggml.c"]:::core
-        GGML_ALLOC["ggml-alloc.c"]:::core
-        GGML_BACKEND_CPP["ggml-backend.cpp"]:::core
-        GGML_REG["ggml-backend-reg.cpp"]:::core
-        GGML_OPT["ggml-opt.cpp"]:::core
-        GGML_QUANTS["ggml-quants.c/.h"]:::core
-        GGUF["gguf.cpp"]:::core
-        HDR_GGML["ggml.h"]:::core
-        HDR_ALLOC["ggml-alloc.h"]:::core
+    subgraph Core_Tensor_Engine["Core Tensor Engine"]
+    style Core_Tensor_Engine fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      GGML_C["<b>ggml.c</b>"]:::core
+      GGML_ALLOC["<b>ggml-alloc.c</b>"]:::core
+      GGML_BACKEND_CPP["<b>ggml-backend.cpp</b>"]:::core
+      GGML_REG["<b>ggml-backend-reg.cpp</b>"]:::core
+      GGML_OPT["<b>ggml-opt.cpp</b>"]:::core
+      GGML_QUANTS["<b>ggml-quants.c/.h</b>"]:::core
+      GGUF["<b>gguf.cpp</b>"]:::core
+      HDR_GGML["<b>ggml.h</b>"]:::core
+      HDR_ALLOC["<b>ggml-alloc.h</b>"]:::core
     end
 
-    subgraph "Backend Modules"
-        direction TB
-        CPU["CPU Backend<br/>(src/ggml-cpu/)"]:::backend
-        BLAS["BLAS Backend<br/>(src/ggml-blas/)"]:::backend
-        CUDA["CUDA Backend<br/>(src/ggml-cuda/)"]:::backend
-        METAL["Metal Backend<br/>(src/ggml-metal/)"]:::backend
-        VULKAN["Vulkan Backend<br/>(src/ggml-vulkan/)"]:::backend
-        OPENCL["OpenCL Backend<br/>(src/ggml-opencl/)"]:::backend
-        SYCL["SYCL Backend<br/>(src/ggml-sycl/)"]:::backend
-        CANN["CANN Backend<br/>(src/ggml-cann/)"]:::backend
-        KOMPUTE["Kompute Backend<br/>(src/ggml-kompute/)"]:::backend
+    subgraph Backend_Modules["Backend Modules"]
+    style Backend_Modules fill:#FBF2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      CPU["CPU Backend<br/>(<b>src/ggml-cpu/</b>)"]:::backend
+      BLAS["BLAS Backend<br/>(<b>src/ggml-blas/</b>)"]:::backend
+      CUDA["CUDA Backend<br/>(<b>src/ggml-cuda/</b>)"]:::backend
+      METAL["Metal Backend<br/>(<b>src/ggml-metal/</b>)"]:::backend
+      VULKAN["Vulkan Backend<br/>(<b>src/ggml-vulkan/</b>)"]:::backend
+      OPENCL["OpenCL Backend<br/>(<b>src/ggml-opencl/</b>)"]:::backend
+      SYCL["SYCL Backend<br/>(<b>src/ggml-sycl/</b>)"]:::backend
+      CANN["CANN Backend<br/>(<b>src/ggml-cann/</b>)"]:::backend
+      KOMPUTE["Kompute Backend<br/>(<b>src/ggml-kompute/</b>)"]:::backend
     end
 
-    subgraph "Public API & Headers"
-        direction TB
-        PublicAPI["Public API<br/>(include/*.h)"]:::api
+    subgraph Public_API_and_Headers["Public API & Headers"]
+    style Public_API_and_Headers fill:#B2F2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      PublicAPI["Public API<br/>(<b>include/*.h</b>)"]:::api
     end
 
-    subgraph "Language Bindings"
-        direction TB
-        PythonBindings["Python CFFI Bindings"]:::api
+    subgraph Language_Bindings["Language Bindings"]
+    style Language_Bindings fill:#B2B9,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      PythonBindings["Python CFFI Bindings"]:::api
     end
 
-    subgraph "Client Applications"
-        direction TB
-        Examples["Example Applications<br/>(examples/)"]:::api
+    subgraph Client_Applications["Client Applications"]
+    style Client_Applications fill:#AAD2,stroke:#333,stroke-width:3px, color: #FFFF
+    direction TB
+      Examples["Example Applications<br/>(<b>examples/</b>)"]:::api
     end
 
-    subgraph "Tools & Tests"
-        direction TB
-        Scripts["scripts/"]:::tool
-        Tests["tests/"]:::tool
-        RPC["RPC Module<br/>(src/ggml-rpc/)"]:::tool
+    subgraph Tools_and_Tests["Tools & Tests"]
+    style Tools_and_Tests fill:#DD22,stroke:#333,stroke-width:3px, color: #FFFF
+    direction TB
+      Scripts["s<b>cripts/</b>"]:::tool
+      Tests["<b>tests/</b>"]:::tool
+      RPC["RPC Module<br/>(<b>src/ggml-rpc/</b>)"]:::tool
     end
 
     %% Artifacts
-    LIB["libggml<br/>(static/shared)"]:::core
+    LIB["libggml<br/>(<b>static/shared</b>)"]:::core
 
     %% Build relationships
     CMakeLists -->|configures & compiles| GGML_C
@@ -180,10 +187,10 @@ flowchart TD
     GGML_REG --> KOMPUTE
 
     %% Styles
-    classDef core fill:#ADD8E6,stroke:#000
-    classDef backend fill:#90EE90,stroke:#000
-    classDef api fill:#FFA500,stroke:#000
-    classDef tool fill:#D3D3D3,stroke:#000
+    classDef core fill:#A2E6,stroke:#000
+    classDef backend fill:#9E92,stroke:#000
+    classDef api fill:#FA52,stroke:#000
+    classDef tool fill:#D3D3,stroke:#000
 
     %% Click Events
     click CMakeLists "https://github.com/ggml-org/ggml/blob/master/CMakeLists.txt"
