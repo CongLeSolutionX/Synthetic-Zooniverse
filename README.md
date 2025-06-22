@@ -250,9 +250,12 @@ graph LR
 
 ```
 
-DOI: [10.13140/RG.2.2.14724.03203](http://dx.doi.org/10.13140/RG.2.2.14724.03203)
+> [!TIP]
+> DOI: [10.13140/RG.2.2.14724.03203](http://dx.doi.org/10.13140/RG.2.2.14724.03203)
 
-Note: Mermaid version v11.4.1-b.14
+
+> [!NOTE]
+> Mermaid version v11.4.1-b.14
 
 ---
 
