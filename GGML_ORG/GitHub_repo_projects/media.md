@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/ggml-org/ci
+source: https://github.com/ggml-org/media
 ---
 
 
@@ -12,7 +12,7 @@ source: https://github.com/ggml-org/ci
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDV0NjhoMjFmMTU4bmk5OXZvdDRrNXR6MHNhenZ4c3UyaGUxYnpqbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/52FJTR5RaZ15dlzwqF/giphy.gif)
+> ![Loading...](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWxxaTBpM2VvY20zOXJhZzI2enVwcHZoNGhkeXlmZ2FwdGp5NnFkNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEduIl1GryVXv22ly/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -24,7 +24,7 @@ source: https://github.com/ggml-org/ci
 
 
 
-# ci repo project
+# media repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -40,11 +40,11 @@ source: https://github.com/ggml-org/ci
 </details>
 
 
-----
+---
 
 ```mermaid
 ---
-title: "ci repo project"
+title: "media repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -59,79 +59,110 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
-    'fontFamily': 'American Typewriter, monospace',
-    'logLevel': 'fatal',
+    'flowchart': { 'htmlLabels': true, 'curve': 'linear'},
+    'fontFamily': 'Monaco',
     'themeVariables': {
       'primaryColor': '#22BB',
       'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#6232',
+      'secondaryColor': '#EEF2',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
-      'fontSize': '20px'
+      'fontSize': '15px'
     }
   }
 }%%
 flowchart TB
-    %% Bootstrap phase
-    subgraph Bootstrap_and_Provisioning["Bootstrap & Provisioning"]
-    style Bootstrap_and_Provisioning fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
-    direction TB
-        Setup["Bootstrap Scripts"]:::infra
+    %% Actors
+    User["User"]:::user
+
+    %% Documentation
+    doc["README.md"]:::doc
+    gitignore1[".gitignore"]:::doc
+    gitignore2["cards/.gitignore"]:::doc
+
+    %% CLI Entry Scripts
+    subgraph "CLI Entry Scripts"
+        script1["llama.cpp-feature-cache-reuse.sh"]:::script
+        script2["llama.cpp-feature-speculative-decoding.sh"]:::script
+        script3["llama.cpp-model-gemma-3-test.sh"]:::script
+        script4["llama.cpp-model-nomic-embed-text-v2.sh"]:::script
+        script5["llama.cpp-model-qwen-3.sh"]:::script
     end
 
-    %% Infrastructure layer
-    subgraph Docker_Hosts["Docker Hosts<br/>(VMs)"]
-    style Docker_Hosts fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
-    direction TB
-        subgraph Runner_Pool["Runner Pool"]
-        style Runner_Pool fill:#2BF2,stroke:#333,stroke-width:1px, color: #FFFF
-        direction TB
-            Runner["GitHub-Runner Container"]:::container
-            ModelDL["Model-Downloader Container"]:::container
-        end
+    common["common.sh"]:::script
+
+    %% Engine
+    subgraph "llama.cpp Engine"
+        engine["llama.cpp binary + models"]:::engine
     end
 
-    %% Core orchestrator
-    CI_Orchestrator["CI Orchestrator Service"]:::service
-
-    %% External services
-    subgraph GitHub["GitHub"]
-    style GitHub fill:#B2F2,stroke:#333,stroke-width:1px, color: #FFFF
-    direction TB
-        GitHubAPI["GitHub API"]:::external
-        GitHubRepos["GitHub Repositories"]:::external
+    %% Assets
+    subgraph "Assets"
+        fonts["Fonts"]:::asset
+        logo["Logo"]:::asset
     end
 
-    %% Data flows
-    Setup -->|boots and configures| Docker_Hosts
-    CI_Orchestrator -->|polls for commits| GitHubAPI
-    GitHubAPI -->|notifies of new commits| CI_Orchestrator
-    CI_Orchestrator -->|schedules job| Runner
-    Runner -->|if needed invokes| ModelDL
-    Runner -->|pushes logs/results| GitHubAPI
-    CI_Orchestrator -->|updates commit status| GitHubAPI
+    composer["Image Composer (ImageMagick)"]:::process
+    output["Output: output.png"]:::output
+    sync["Sync to ggml org"]:::sync
 
-    %% Click events
-    click CI_Orchestrator "https://github.com/ggml-org/ci/tree/master/images/github-runners-manager/"
-    click Runner "https://github.com/ggml-org/ci/tree/master/images/github-runner/"
-    click ModelDL "https://github.com/ggml-org/ci/tree/master/images/llama.cpp-model-downloader/"
+    %% Flow
+    User -->|runs| script1
+    User -->|runs| script2
+    User -->|runs| script3
+    User -->|runs| script4
+    User -->|runs| script5
+
+    script1 -->|"sources common.sh"| common
+    script2 --> common
+    script3 --> common
+    script4 --> common
+    script5 --> common
+
+    common -->|"invokes"| engine
+    engine -->|"stdout text"| common
+
+    common -->|"renders image"| composer
+    fonts --> composer
+    logo --> composer
+
+    composer -->|"writes"| output
+    output -->|"triggers"| sync
+
+    %% Documentation links
+    User --- doc
+    doc --- gitignore1
+    doc --- gitignore2
+
+    %% Click Events
+    click script1 "https://github.com/ggml-org/media/blob/master/cards/llama.cpp-feature-cache-reuse.sh"
+    click script2 "https://github.com/ggml-org/media/blob/master/cards/llama.cpp-feature-speculative-decoding.sh"
+    click script3 "https://github.com/ggml-org/media/blob/master/cards/llama.cpp-model-gemma-3-test.sh"
+    click script4 "https://github.com/ggml-org/media/blob/master/cards/llama.cpp-model-nomic-embed-text-v2.sh"
+    click script5 "https://github.com/ggml-org/media/blob/master/cards/llama.cpp-model-qwen-3.sh"
+    click common "https://github.com/ggml-org/media/blob/master/cards/common.sh"
+    click fonts "https://github.com/ggml-org/media/tree/master/fonts/ProFontWinTweaked/"
+    click logo "https://github.com/ggml-org/media/tree/master/logo/"
+    click sync "https://github.com/ggml-org/media/blob/master/scripts/sync-to-ggml-org.sh"
+    click doc "https://github.com/ggml-org/media/blob/master/README.md"
+    click gitignore1 "https://github.com/ggml-org/media/blob/master/.gitignore"
+    click gitignore2 "https://github.com/ggml-org/media/blob/master/cards/.gitignore"
 
     %% Styles
-    classDef service fill:#D2F2,stroke:#005B9F,color:#F8B229;
-    classDef container fill:#BF92,stroke:#007ACC,color:#F8B229;
-    classDef external fill:#DFE2,stroke:#1A7F1A,color:#F8B229;
-    classDef infra fill:#F2F2,stroke:#888888,color:#F8B229;
-    class CI_Orchestrator service
-    class Runner,ModelDL container
-    class GitHubAPI,GitHubRepos external
-    class Setup infra
+    classDef user fill:#eef2,stroke:#333,stroke-width:1px
+    classDef script fill:#ddf2,stroke:#333,stroke-width:1px
+    classDef engine fill:#cfc2,stroke:#333,stroke-width:1px
+    classDef asset fill:#fcf2,stroke:#333,stroke-width:1px
+    classDef process fill:#ff92,stroke:#333,stroke-width:1px
+    classDef output fill:#fc92,stroke:#333,stroke-width:1px
+    classDef sync fill:#9cf2,stroke:#333,stroke-width:1px
+    classDef doc fill:#eee2,stroke:#333,stroke-width:1px
 
 ```
 
-------
+-----
 
 ```mermaid
 ---

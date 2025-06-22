@@ -4,7 +4,7 @@ author: Cong Le
 version: "1.0"
 license(s): MIT, CC BY-SA 4.0
 copyright: Copyright (c) 2025 Cong Le. All Rights Reserved.
-source: https://github.com/ggml-org/ci
+source: https://github.com/jlumbroso/free-disk-space
 ---
 
 
@@ -12,7 +12,7 @@ source: https://github.com/ggml-org/ci
 > 
 > This is a working draft in progress
 > 
-> ![Loading...](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaDV0NjhoMjFmMTU4bmk5OXZvdDRrNXR6MHNhenZ4c3UyaGUxYnpqbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/52FJTR5RaZ15dlzwqF/giphy.gif)
+> ![Loading...](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmd2OHpkYmJvM3Mxc2p3aHdjOTE5cTYwMXVxbW9qc3hoZ244ZXRkaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TsO3cLxeE8DNsztZyv/giphy.gif)
 >
 > gif image is provided by [Giphy](https://giphy.com)
 > 
@@ -22,9 +22,7 @@ source: https://github.com/ggml-org/ci
 ----
 
 
-
-
-# ci repo project
+# jlumbroso - free-disk-space repo project
 <details open>
 <summary>Click to show/hide the full disclaimer.</summary>
    
@@ -40,11 +38,11 @@ source: https://github.com/ggml-org/ci
 </details>
 
 
-----
+---
 
 ```mermaid
 ---
-title: "ci repo project"
+title: "jlumbroso - free-disk-space repo project"
 author: "Cong Le"
 version: "1.0"
 license(s): "MIT, CC BY-SA 4.0"
@@ -52,86 +50,90 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
-  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
-    'fontFamily': 'American Typewriter, monospace',
-    'logLevel': 'fatal',
+    'flowchart': { 'htmlLabels': true, 'curve': 'linear'},
+    'fontFamily': 'Monaco',
     'themeVariables': {
       'primaryColor': '#22BB',
       'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#6232',
+      'secondaryColor': '#EEF2',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
-      'fontSize': '20px'
+      'fontSize': '15px'
     }
   }
 }%%
 flowchart TB
-    %% Bootstrap phase
-    subgraph Bootstrap_and_Provisioning["Bootstrap & Provisioning"]
-    style Bootstrap_and_Provisioning fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
-    direction TB
-        Setup["Bootstrap Scripts"]:::infra
+    %% Global Layers
+    subgraph User_Configuration["User Configuration"]
+        Workflow["GitHub Actions Workflow"]:::config
+        ActionDef["Action Definition<br/>(action.yml)"]:::config
     end
 
-    %% Infrastructure layer
-    subgraph Docker_Hosts["Docker Hosts<br/>(VMs)"]
-    style Docker_Hosts fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
+    subgraph "Host Environment"
+        Runner["Ubuntu Runner VM"]:::host
+    end
+
+    subgraph Clean_up_Engine["Clean-up Engine"]
     direction TB
-        subgraph Runner_Pool["Runner Pool"]
-        style Runner_Pool fill:#2BF2,stroke:#333,stroke-width:1px, color: #FFFF
+        ModulesGroup["Clean-up Modules"]:::engine
+        subgraph Clean_up_engine[" "]
         direction TB
-            Runner["GitHub-Runner Container"]:::container
-            ModelDL["Model-Downloader Container"]:::container
+            Android["Android libs cleanup"]:::module
+            Dotnet[".NET cleanup"]:::module
+            Haskell["Haskell cleanup"]:::module
+            Large["Large packages cleanup"]:::module
+            Toolcache["Tool cache cleanup"]:::module
+            Swap["Swap cleanup"]:::module
         end
+        Aggregator["Aggregate Free-Space Metrics"]:::log
     end
 
-    %% Core orchestrator
-    CI_Orchestrator["CI Orchestrator Service"]:::service
+    DocsGroup["Project Documentation & License"]:::doc
+    README["README.md"]:::doc
+    License["LICENSE"]:::doc
 
-    %% External services
-    subgraph GitHub["GitHub"]
-    style GitHub fill:#B2F2,stroke:#333,stroke-width:1px, color: #FFFF
-    direction TB
-        GitHubAPI["GitHub API"]:::external
-        GitHubRepos["GitHub Repositories"]:::external
-    end
+    %% Connections
+    Workflow -->|"trigger event"| Runner
+    Runner -->|"reads action.yml"| ActionDef
+    ActionDef -->|"input flags"| ModulesGroup
+    ModulesGroup --> Android
+    ModulesGroup --> Dotnet
+    ModulesGroup --> Haskell
+    ModulesGroup --> Large
+    ModulesGroup --> Toolcache
+    ModulesGroup --> Swap
+    Android -->|"shell commands"| Aggregator
+    Dotnet -->|"shell commands"| Aggregator
+    Haskell -->|"shell commands"| Aggregator
+    Large -->|"shell commands"| Aggregator
+    Toolcache -->|"shell commands"| Aggregator
+    Swap -->|"shell commands"| Aggregator
+    Aggregator -->|"console output"| DocsGroup
 
-    %% Data flows
-    Setup -->|boots and configures| Docker_Hosts
-    CI_Orchestrator -->|polls for commits| GitHubAPI
-    GitHubAPI -->|notifies of new commits| CI_Orchestrator
-    CI_Orchestrator -->|schedules job| Runner
-    Runner -->|if needed invokes| ModelDL
-    Runner -->|pushes logs/results| GitHubAPI
-    CI_Orchestrator -->|updates commit status| GitHubAPI
-
-    %% Click events
-    click CI_Orchestrator "https://github.com/ggml-org/ci/tree/master/images/github-runners-manager/"
-    click Runner "https://github.com/ggml-org/ci/tree/master/images/github-runner/"
-    click ModelDL "https://github.com/ggml-org/ci/tree/master/images/llama.cpp-model-downloader/"
+    %% Click Events
+    click Workflow "https://github.com/jlumbroso/free-disk-space/blob/main/.github/workflows/test.yml"
+    click ActionDef "https://github.com/jlumbroso/free-disk-space/blob/main/action.yml"
+    click README "https://github.com/jlumbroso/free-disk-space/blob/main/README.md"
+    click License "https://github.com/jlumbroso/free-disk-space/tree/main/LICENSE"
 
     %% Styles
-    classDef service fill:#D2F2,stroke:#005B9F,color:#F8B229;
-    classDef container fill:#BF92,stroke:#007ACC,color:#F8B229;
-    classDef external fill:#DFE2,stroke:#1A7F1A,color:#F8B229;
-    classDef infra fill:#F2F2,stroke:#888888,color:#F8B229;
-    class CI_Orchestrator service
-    class Runner,ModelDL container
-    class GitHubAPI,GitHubRepos external
-    class Setup infra
-
+    classDef config fill:#a8e6cf,stroke:#333,stroke-width:1px
+    classDef host fill:#ccc,stroke:#333,stroke-width:1px
+    classDef engine fill:#dcedc1,stroke:#333,stroke-width:1px
+    classDef module fill:#84b6f4,stroke:#333,stroke-width:1px
+    classDef log fill:#ffd97d,stroke:#333,stroke-width:1px
+    classDef doc fill:#ffaaa5,stroke:#333,stroke-width:1px
 ```
 
-------
+-----
 
 ```mermaid
 ---
