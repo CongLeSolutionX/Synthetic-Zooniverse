@@ -75,7 +75,8 @@ config:
   }
 }%%
 flowchart TD
-    subgraph "Front-ends & Integrations"
+    subgraph Front_ends_and_Integrations["Front-ends & Integrations"]
+    style Front_ends_and_Integrations fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         FE_CLI["CLI Tools"]:::frontend
         FE_Bindings["Language Bindings"]:::frontend
         FE_Mobile["Mobile Apps"]:::frontend
@@ -87,25 +88,28 @@ flowchart TD
     FE_Mobile --> Core
     FE_Others --> Core
 
-    subgraph "Whisper Core Library"
+    subgraph Whisper_Core_Library["Whisper Core Library"]
+    style Whisper_Core_Library fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
         Core["Whisper Core Library"]:::core
     end
 
     Core --> Backend
 
-    subgraph "ggml Backend"
+    subgraph ggml_Backend["ggml Backend"]
+    style ggml_Backend fill:#22BB,stroke:#333,stroke-width:1px, color: #FFFF
         Backend["ggml Backend"]:::backend
     end
 
     Backend --> ComputeSplit{"Dispatch Based On Build Flags"}
 
-    subgraph "Compute Engines"
+    subgraph Compute_Engines["Compute Engines"]
+    style Compute_Engines fill:#2BB,stroke:#333,stroke-width:1px, color: #FFFF
         CE_CPU["CPU Intrinsics"]:::compute
         CE_CUDA["CUDA/cuBLAS"]:::compute
         CE_Vulkan["Vulkan GPU"]:::compute
-        CE_Metal["Metal / Core ML"]:::compute
+        CE_Metal["Metal /<br/> Core ML"]:::compute
         CE_OpenVINO["OpenVINO"]:::compute
-        CE_CANN["CANN (Ascend)"]:::compute
+        CE_CANN["CANN<br/>(Ascend)"]:::compute
     end
 
     ComputeSplit --> CE_CPU
@@ -122,13 +126,15 @@ flowchart TD
     CE_OpenVINO --> Backend
     CE_CANN --> Backend
 
-    subgraph "Model Artifacts & Conversion"
+    subgraph Model_Artifacts_and_Conversion["Model Artifacts & Conversion"]
+    style Model_Artifacts_and_Conversion fill:#299D,stroke:#333,stroke-width:1px, color: #FFFF
         ModelsNode["Model Storage & Conversion"]:::models
     end
 
     ModelsNode -.-> Core
 
-    subgraph "Build & CI Infrastructure"
+    subgraph Build_and_CI_Infrastructure["Build & CI Infrastructure"]
+    style Build_and_CI_Infrastructure fill:#DD22,stroke:#333,stroke-width:1px, color: #FFFF
         CI["Build & CI"]:::ci
     end
 
@@ -136,12 +142,12 @@ flowchart TD
     CI --> Backend
     CI --> FE_CLI
 
-    classDef core fill:#ADD8E6,stroke:#000;
-    classDef backend fill:#90EE90,stroke:#000;
-    classDef compute fill:#FFA500,stroke:#000;
-    classDef frontend fill:#DDA0DD,stroke:#000;
-    classDef models fill:#FFFF00,stroke:#000;
-    classDef ci fill:#D3D3D3,stroke:#000;
+    classDef core fill:#AD86,stroke:#000
+    classDef backend fill:#EE22,stroke:#000
+    classDef compute fill:#B2BF,stroke:#000
+    classDef frontend fill:#DAD2,stroke:#000
+    classDef models fill:#22B,stroke:#000
+    classDef ci fill:#D3D3,stroke:#000
 
     click Core "https://github.com/ggml-org/whisper.cpp/blob/master/include/whisper.h"
     click Core "https://github.com/ggml-org/whisper.cpp/blob/master/src/whisper.cpp"

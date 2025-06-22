@@ -50,6 +50,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
@@ -63,7 +64,7 @@ config:
       'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#EEF2',
+      'secondaryColor': '#222',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
       'fontSize': '15px'
@@ -72,38 +73,39 @@ config:
 }%%
 flowchart TD
     %% User Trigger
-    A["User Repo Workflow (.yml)"]:::project
-    A -->|"(1) trigger: push/tag"| B["GitHub Actions Runner"]:::github
+    A["User Repo Workflow<br/>(<b>.yml</b>)"]:::project
+    A -->|"(1) trigger:<br/>push/tag"| B["GitHub Actions Runner"]:::github
 
     %% Action Execution Flow
-    B -->|"(2) load metadata"| C["action.yml"]:::project
-    C -->|"(3) exec bundle"| D["dist/index.js"]:::project
-    D -->|"invokes"| E["@actions/core"]:::project
-    D -->|"calls"| F["src/main.js"]:::project
+    B -->|"(2) load metadata"| C["<b>action.yml</b>"]:::project
+    C -->|"(3) exec bundle"| D["<b>dist/index.js</b>"]:::project
+    D -->|"invokes"| E["<b>@actions/core</b>"]:::project
+    D -->|"calls"| F["<b>src/main.js</b>"]:::project
     F -->|"reads inputs"| E
-    F -->|"delegates to"| G["src/create-release.js"]:::project
+    F -->|"delegates to"| G["<b>src/create-release.js</b>"]:::project
 
     %% Release Logic
-    G -->|"GET /repos/:owner/:repo/tags"| H["GitHub REST API"]:::external
-    G -->|"compute tag (semver)"| I["semver"]:::project
-    G -->|"POST /repos/:owner/:repo/releases"| H
+    G -->|"<code>GET /repos/:owner/:repo/tags</code>"| H["GitHub REST API"]:::external
+    G -->|"compute tag<br/>(semver)"| I["semver"]:::project
+    G -->|"<code>POST /repos/:owner/:repo/releases</code>"| H
     G -->|"set outputs"| J["Runner exposes outputs"]:::github
-    J -->|"available to"| K["Subsequent Steps (upload-release-asset)"]:::github
+    J -->|"available to"| K["Subsequent Steps<br/>(<b>upload-release-asset</b>)"]:::github
 
-    %% CI/Test Pipeline
-    subgraph "CI / Test Pipeline"
-        CI1[".github/workflows/ci.yml"]:::project
-        CI2["tests/create-release.test.js"]:::project
-        CI3["package.json"]:::project
-        CI4["package-lock.json"]:::project
+    subgraph CI_Test_Pipeline["CI/Test Pipeline"]
+    style CI_Test_Pipeline fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+        CI1["<b>.github/workflows/ci.yml</b>"]:::project
+        CI2["<b>tests/create-release.test.js</b>"]:::project
+        CI3["<b>package.json</b>"]:::project
+        CI4["<b>package-lock.json</b>"]:::project
     end
+
     CI1 -->|"runs tests via npm test"| CI2
     CI2 -->|"validates logic"| F
     CI1 -->|"uses deps"| CI3
     CI1 -->|"locks deps"| CI4
 
-    %% Legend
-    subgraph Legend
+    subgraph Legend["Legend"]
+    style Legend fill:#22BB,stroke:#333,stroke-width:1px, color: #FFFF
         L1["GitHub-managed Components"]:::github
         L2["Project Artifacts"]:::project
         L3["External Services"]:::external
@@ -121,10 +123,11 @@ flowchart TD
     click CI4 "https://github.com/zendesk/action-create-release/blob/master/package-lock.json"
 
     %% Styles
-    classDef github fill:#cce5ff,stroke:#004085,color:#004085;
-    classDef project fill:#d4edda,stroke:#155724,color:#155724;
-    classDef external fill:#fff3cd,stroke:#856404,color:#856404;
-    classDef ci fill:#e2e3e5,stroke:#6c757d,color:#6c757d;
+    classDef github fill:#004085,stroke:#004085
+    classDef project fill:#155724,stroke:#155724
+    classDef external fill:#856404,stroke:#856404
+    classDef ci fill:#657d,stroke:#6c757d
+    
     class Legend,L1,L2,L3,L4 ci
     class L1 github
     class L2 project

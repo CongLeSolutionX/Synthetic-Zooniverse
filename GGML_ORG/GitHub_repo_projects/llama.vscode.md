@@ -57,7 +57,7 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'flowchart': { 'htmlLabels': true, 'curve': 'bumpY' },
     'fontFamily': 'American Typewriter, monospace',
     'logLevel': 'fatal',
     'themeVariables': {
@@ -72,134 +72,136 @@ config:
     }
   }
 }%%
-flowchart TD
-    %% Global Entities
-    Editor["VS Code Editor Host"]:::external
+flowchart LR
+  %% Global Entities
+  Editor["VS Code Editor Host"]:::external
 
-    subgraph "Extension Host Process" 
-        direction TB
-        %% Orchestration Layer
-        subgraph "Orchestration" 
-            direction TB
-            ExtensionDispatcher["Command & Event Dispatcher"]:::frontend
-            Application["Orchestration / Dependency Injection"]:::frontend
-            Architect["Architect / Factory Setup"]:::frontend
-        end
-
-        %% UI Integrator Layer
-        subgraph "UI Integrators"
-            direction TB
-            Menu["Context Menu Commands"]:::frontend
-            Statusbar["Status Bar Updates"]:::frontend
-            TextEditor["Inline Suggestions & Keybindings"]:::frontend
-        end
-
-        %% Context Manager Layer
-        subgraph "Context Manager"
-            direction TB
-            ChatContext["Primary Context (chat-context)"]:::backend
-            ExtraContext["Additional Context (extra-context)"]:::backend
-        end
-
-        %% Completion Engine Layer
-        subgraph "Completion Engine"
-            direction TB
-            ChatWithAI["High-level Chat Interface"]:::backend
-            Completion["Core Completion Logic"]:::backend
-            LlamaServer["HTTP Interface to llama.cpp"]:::backend
-        end
-
-        %% Supporting Services
-        subgraph "Supporting Services"
-            direction TB
-            Configuration["Configuration & Toggles"]:::service
-            Prompts["Prompt Templates"]:::service
-            Translations["Localization / Translations"]:::service
-            Utils["General Utilities"]:::service
-            LRUCache["In-memory LRU Cache"]:::service
-            Logger["Logging Utilities"]:::service
-        end
-
-        %% Tests
-        Tests["Extension Tests"]:::service
+  subgraph Extension_Host_Process["Extension Host Process"]
+  style Extension_Host_Process fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+  direction TB
+    subgraph Orchestration_Layer["Orchestration Layer"]
+    style Orchestration_Layer fill:#FFD2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      ExtensionDispatcher["Command & Event Dispatcher"]:::frontend
+      Application["Orchestration /<br/> Dependency Injection"]:::frontend
+      Architect["Architect /<br/> Factory Setup"]:::frontend
     end
 
-    %% External Service
-    LlamaCPP["llama.cpp Server\n(HTTP :8080)"]:::external
+    subgraph UI_Integrator_Layer["UI Integrators"]
+    style UI_Integrator_Layer fill:#2D22,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      Menu["Context Menu Commands"]:::frontend
+      Statusbar["Status Bar Updates"]:::frontend
+      TextEditor["Inline Suggestions & Keybindings"]:::frontend
+    end
 
-    %% Connections - Dynamic Flow
-    Editor -->|"onType/onCompletion"| ExtensionDispatcher
-    ExtensionDispatcher -->|"init services"| Application
-    Application -->|"wires"| Architect
+    
+    subgraph Context_Manager_Layer["Context Manager"]
+    style Context_Manager_Layer fill:#DB22,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      ChatContext["Primary Context<br/>(chat-context)"]:::backend
+      ExtraContext["Additional Context<br/>(extra-context)"]:::backend
+    end
 
-    Architect --> ChatContext
-    Architect --> ExtraContext
-    Architect --> ChatWithAI
-    Architect --> Completion
-    Architect --> LlamaServer
-    Architect --> Configuration
-    Architect --> Prompts
-    Architect --> Translations
-    Architect --> Utils
-    Architect --> LRUCache
-    Architect --> Logger
-    Architect --> Menu
-    Architect --> Statusbar
-    Architect --> TextEditor
+    subgraph Completion_Engine_Layer["Completion Engine"]
+    style Completion_Engine_Layer fill:#BCF2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      ChatWithAI["High-level Chat Interface"]:::backend
+      Completion["Core Completion Logic"]:::backend
+      LlamaServer["HTTP Interface to llama.cpp"]:::backend
+    end
 
-    ChatContext --> ChatWithAI
-    ExtraContext --> ChatWithAI
+    subgraph Supporting_Services["Supporting Services"]
+    style Supporting_Services fill:#CFF2,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      Configuration["Configuration & Toggles"]:::service
+      Prompts["Prompt Templates"]:::service
+      Translations["Localization /<br/> Translations"]:::service
+      Utils["General Utilities"]:::service
+      LRUCache["In-memory LRU Cache"]:::service
+      Logger["Logging Utilities"]:::service
+    end
 
-    ChatWithAI --> Completion
-    Completion --> LlamaServer
-    LlamaServer -->|HTTP request| LlamaCPP
-    LlamaCPP -->|token stream| LlamaServer
-    LlamaServer -->|response| Completion
-    Completion -->|CompletionItems| TextEditor
+    %% Tests
+    Tests["Extension Tests"]:::service
+  end
 
-    TextEditor -->|render suggestions| Editor
-    Statusbar -->|update metrics| Editor
-    Menu -->|commands| Editor
+  %% External Service
+  LlamaCPP["llama.cpp Server<br/>(HTTP :8080)"]:::external
 
-    %% Supporting Services usage
-    Completion --> Configuration
-    Completion --> Prompts
-    ChatWithAI --> Prompts
-    ChatWithAI --> LRUCache
-    ChatWithAI --> Logger
-    ChatContext --> Utils
-    ExtraContext --> Utils
+  %% Connections - Dynamic Flow
+  Editor -->|"onType/<br/>onCompletion"| ExtensionDispatcher
+  ExtensionDispatcher -->|"init services"| Application
+  Application -->|"wires"| Architect
 
-    %% Tests dependency
-    Tests --> ExtensionDispatcher
-    Tests --> ChatWithAI
-    Tests --> Completion
+  Architect --> ChatContext
+  Architect --> ExtraContext
+  Architect --> ChatWithAI
+  Architect --> Completion
+  Architect --> LlamaServer
+  Architect --> Configuration
+  Architect --> Prompts
+  Architect --> Translations
+  Architect --> Utils
+  Architect --> LRUCache
+  Architect --> Logger
+  Architect --> Menu
+  Architect --> Statusbar
+  Architect --> TextEditor
 
-    %% Click Events
-    click ExtensionDispatcher "https://github.com/ggml-org/llama.vscode/blob/master/src/extension.ts"
-    click Application "https://github.com/ggml-org/llama.vscode/blob/master/src/application.ts"
-    click Architect "https://github.com/ggml-org/llama.vscode/blob/master/src/architect.ts"
-    click ChatContext "https://github.com/ggml-org/llama.vscode/blob/master/src/chat-context.ts"
-    click ExtraContext "https://github.com/ggml-org/llama.vscode/blob/master/src/extra-context.ts"
-    click ChatWithAI "https://github.com/ggml-org/llama.vscode/blob/master/src/chat-with-ai.ts"
-    click Completion "https://github.com/ggml-org/llama.vscode/blob/master/src/completion.ts"
-    click LlamaServer "https://github.com/ggml-org/llama.vscode/blob/master/src/llama-server.ts"
-    click Menu "https://github.com/ggml-org/llama.vscode/blob/master/src/menu.ts"
-    click Statusbar "https://github.com/ggml-org/llama.vscode/blob/master/src/statusbar.ts"
-    click TextEditor "https://github.com/ggml-org/llama.vscode/blob/master/src/text-editor.ts"
-    click Configuration "https://github.com/ggml-org/llama.vscode/blob/master/src/configuration.ts"
-    click Prompts "https://github.com/ggml-org/llama.vscode/blob/master/src/prompts.ts"
-    click Translations "https://github.com/ggml-org/llama.vscode/blob/master/src/translations.ts"
-    click Utils "https://github.com/ggml-org/llama.vscode/blob/master/src/utils.ts"
-    click LRUCache "https://github.com/ggml-org/llama.vscode/blob/master/src/lru-cache.ts"
-    click Logger "https://github.com/ggml-org/llama.vscode/blob/master/src/logger.ts"
-    click Tests "https://github.com/ggml-org/llama.vscode/blob/master/src/test/extension.test.ts"
+  ChatContext --> ChatWithAI
+  ExtraContext --> ChatWithAI
 
-    %% Styles
-    classDef frontend fill:#BBDEFB,stroke:#333,stroke-width:1px
-    classDef backend fill:#C8E6C9,stroke:#333,stroke-width:1px
-    classDef service fill:#FFF9C4,stroke:#333,stroke-width:1px
-    classDef external fill:#FFCCBC,stroke:#333,stroke-width:1px
+  ChatWithAI --> Completion
+  Completion --> LlamaServer
+  LlamaServer -->|HTTP request| LlamaCPP
+  LlamaCPP -->|token stream| LlamaServer
+  LlamaServer -->|response| Completion
+  Completion -->|CompletionItems| TextEditor
+
+  TextEditor -->|render suggestions| Editor
+  Statusbar -->|update metrics| Editor
+  Menu -->|commands| Editor
+
+  %% Supporting Services usage
+  Completion --> Configuration
+  Completion --> Prompts
+  ChatWithAI --> Prompts
+  ChatWithAI --> LRUCache
+  ChatWithAI --> Logger
+  ChatContext --> Utils
+  ExtraContext --> Utils
+
+  %% Tests dependency
+  Tests --> ExtensionDispatcher
+  Tests --> ChatWithAI
+  Tests --> Completion
+
+  %% Click Events
+  click ExtensionDispatcher "https://github.com/ggml-org/llama.vscode/blob/master/src/extension.ts"
+  click Application "https://github.com/ggml-org/llama.vscode/blob/master/src/application.ts"
+  click Architect "https://github.com/ggml-org/llama.vscode/blob/master/src/architect.ts"
+  click ChatContext "https://github.com/ggml-org/llama.vscode/blob/master/src/chat-context.ts"
+  click ExtraContext "https://github.com/ggml-org/llama.vscode/blob/master/src/extra-context.ts"
+  click ChatWithAI "https://github.com/ggml-org/llama.vscode/blob/master/src/chat-with-ai.ts"
+  click Completion "https://github.com/ggml-org/llama.vscode/blob/master/src/completion.ts"
+  click LlamaServer "https://github.com/ggml-org/llama.vscode/blob/master/src/llama-server.ts"
+  click Menu "https://github.com/ggml-org/llama.vscode/blob/master/src/menu.ts"
+  click Statusbar "https://github.com/ggml-org/llama.vscode/blob/master/src/statusbar.ts"
+  click TextEditor "https://github.com/ggml-org/llama.vscode/blob/master/src/text-editor.ts"
+  click Configuration "https://github.com/ggml-org/llama.vscode/blob/master/src/configuration.ts"
+  click Prompts "https://github.com/ggml-org/llama.vscode/blob/master/src/prompts.ts"
+  click Translations "https://github.com/ggml-org/llama.vscode/blob/master/src/translations.ts"
+  click Utils "https://github.com/ggml-org/llama.vscode/blob/master/src/utils.ts"
+  click LRUCache "https://github.com/ggml-org/llama.vscode/blob/master/src/lru-cache.ts"
+  click Logger "https://github.com/ggml-org/llama.vscode/blob/master/src/logger.ts"
+  click Tests "https://github.com/ggml-org/llama.vscode/blob/master/src/test/extension.test.ts"
+
+  %% Styles
+  classDef frontend fill:#BEF2,stroke:#333,stroke-width:1px
+  classDef backend fill:#C6C9,stroke:#333,stroke-width:1px
+  classDef service fill:#F9C2,stroke:#333,stroke-width:1px
+  classDef external fill:#C2BC,stroke:#333,stroke-width:1px
 
 ```
 
