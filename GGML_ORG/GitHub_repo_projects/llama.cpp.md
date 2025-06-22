@@ -58,7 +58,7 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'flowchart': { 'htmlLabels': true, 'curve': 'bumpY' },
     'fontFamily': 'American Typewriter, monospace',
     'logLevel': 'fatal',
     'themeVariables': {
@@ -75,57 +75,63 @@ config:
 }%%
 flowchart TD
     %% Public API
-    A["llama.cpp <<Public API>>"]:::api
+    A["llama.cpp <br/>(Public API)"]:::api
 
     %% I/O & Model Representation Layer
-    subgraph "I/O & Model (Blue)"
-        direction TB
-        B1["llama-model-loader"]:::io
-        B2["llama-model-saver"]:::io
-        B3["llama-mmap"]:::io
-        B4["llama-io"]:::io
-        B5["llama-model"]:::model
-        B6["llama-hparams"]:::model
-        B7["llama-cparams"]:::model
-        B8["llama-vocab"]:::model
+    subgraph I_O_and_Model["I/O & Model<br/>(Blue)"]
+    style I_O_and_Model fill:#004085,stroke:#6C3483,stroke-width:3px, color: #FFFF
+    direction TB
+      B1["llama-model-loader"]:::io
+      B2["llama-model-saver"]:::io
+      B3["llama-mmap"]:::io
+      B4["llama-io"]:::io
+      B5["llama-model"]:::model
+      B6["llama-hparams"]:::model
+      B7["llama-cparams"]:::model
+      B8["llama-vocab"]:::model
     end
 
     %% Execution & Backends Layer
-    subgraph "Execution & Backends (Green)"
-        direction TB
-        C1["llama-graph"]:::exec
-        C2["llama-arch <<Backend Interface>>"]:::exec
-        C3["llama-adapter"]:::exec
-        C4["llama-batch"]:::exec
+    subgraph Execution_and_Backends["Execution & Backends<br/>(Green)"]
+    style Execution_and_Backends fill:#155724,stroke:#856404,stroke-width:1px, color: #FFFF
+    direction TB
+      C1["llama-graph"]:::exec
+      C2["llama-arch <<Backend Interface>>"]:::exec
+      C3["llama-adapter"]:::exec
+      C4["llama-batch"]:::exec
     end
 
     %% Memory & Cache
-    subgraph "Memory & Cache"
-        direction TB
-        D1["llama-memory"]:::cache
-        D2["llama-kv-cache"]:::cache
+    subgraph Memory_and_Cache["Memory & Cache"]
+    style Memory_and_Cache fill:#0c5460,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      D1["llama-memory"]:::cache
+      D2["llama-kv-cache"]:::cache
     end
 
     %% Quantization & Sampling Layer
-    subgraph "Quant & Sampling (Orange)"
-        direction TB
-        E1["llama-quant"]:::quant
-        E2["llama-sampling"]:::quant
+    subgraph Quant_and_Sampling["Quant & Sampling<br/>(Orange)"]
+    style Quant_and_Sampling fill:#856404,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      E1["llama-quant"]:::quant
+      E2["llama-sampling"]:::quant
     end
 
     %% Chat & Context Layer
-    subgraph "Chat & Context (Purple)"
-        direction TB
-        F1["llama-chat"]:::chat
-        F2["llama-context"]:::chat
+    subgraph Chat_and_Context["Chat & Context<br/>(Purple)"]
+    style Chat_and_Context fill:#6f42c1,stroke:#333,stroke-width:1px, color: #FFFF
+    direction TB
+      F1["llama-chat"]:::chat
+      F2["llama-context"]:::chat
     end
 
     %% Utilities Layer
-    subgraph "Utilities (Gray)"
-        direction TB
-        G1["unicode"]:::util
-        G2["unicode-data"]:::util
-        G3["llama-grammar"]:::util
+    subgraph Utilities["Utilities<br/>(Gray)"]
+    style Utilities fill:#6c757d,stroke:#333,stroke-width:2px, color: #FFFF
+    direction TB
+      G1["unicode"]:::util
+      G2["unicode-data"]:::util
+      G3["llama-grammar"]:::util
     end
 
     %% Flow connections
@@ -176,14 +182,14 @@ flowchart TD
     click G3 "https://github.com/ggml-org/llama.cpp/blob/master/src/llama-grammar.cpp"
 
     %% Styles
-    classDef api fill:#cce5ff,stroke:#0062cc,color:#004085;
-    classDef io fill:#b3d7ff,stroke:#005cbf,color:#004085;
-    classDef model fill:#99ccff,stroke:#004085,color:#fff;
-    classDef exec fill:#d4edda,stroke:#155724,color:#155724;
-    classDef cache fill:#d1ecf1,stroke:#0c5460,color:#0c5460;
-    classDef quant fill:#ffe5b4,stroke:#f0ad4e,color:#856404;
-    classDef chat fill:#e2d6f2,stroke:#6f42c1,color:#4b0082;
-    classDef util fill:#f8f9fa,stroke:#6c757d,color:#343a40;
+    classDef api fill:#62cc,stroke:#62cc,stroke-width:1px,color:#F8B229
+    classDef io fill:#005cbf,stroke:#485,stroke-width:3px,color:#F8B229
+    classDef model fill:#004085,stroke:#004085,stroke-width:3px,color:#F8B229
+    classDef exec fill:#155724,stroke:#22BB,stroke-width:4px,color:#F8B229
+    classDef cache fill:#0c5460,stroke:#541,stroke-width:3px,color:#F8B229
+    classDef quant fill:#5229,stroke:#f0ad4e,stroke-width:1px,color:#F8B229
+    classDef chat fill:#4b0082,stroke:#6f42c1,stroke-width:2px,color:#F8B229
+    classDef util fill:#343a40,stroke:#6c757d,stroke-width:1px,color:#F8B229
 
 ```
 
