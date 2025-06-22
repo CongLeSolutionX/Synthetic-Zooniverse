@@ -74,9 +74,12 @@ config:
   }
 }%%
 flowchart TD
+    My_Meme@{ img: "https://raw.githubusercontent.com/meta-llama/llama3/refs/heads/main/Llama3_Repo.jpeg", label: "..🃏..🎲..🀄..", pos: "b", w: 300, h: 250, constraint: "on" }
+    
     %% Public API
     A["llama.cpp <br/>(Public API)"]:::api
 
+    My_Meme ~~~ A
     %% I/O & Model Representation Layer
     subgraph I_O_and_Model["I/O & Model<br/>(Blue)"]
     style I_O_and_Model fill:#004085,stroke:#6C3483,stroke-width:3px, color: #FFFF
