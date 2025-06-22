@@ -74,12 +74,15 @@ config:
   }
 }%%
 flowchart TD
-    My_Meme@{ img: "https://raw.githubusercontent.com/meta-llama/llama3/refs/heads/main/Llama3_Repo.jpeg", label: "..🃏..🎲..🀄..", pos: "b", w: 300, h: 250, constraint: "on" }
+    Llama_logo@{ img: "https://raw.githubusercontent.com/meta-llama/llama3/refs/heads/main/Llama3_Repo.jpeg", label: "..🃏..🎲..🀄..", pos: "b", w: 300, h: 250, constraint: "on" }
+
+    Logo@{ img: "https://pbs.twimg.com/profile_images/1913581839987380224/8X6G4lfs_400x400.jpg", label: "..🪚..🛠️..📚..", pos: "b", w: 200, h: 150, constraint: "on" }
     
     %% Public API
     A["llama.cpp <br/>(Public API)"]:::api
 
-    My_Meme ~~~ A
+    Llama_logo ~~~ A
+    Logo ~~~ Chat_and_Context
     %% I/O & Model Representation Layer
     subgraph I_O_and_Model["I/O & Model<br/>(Blue)"]
     style I_O_and_Model fill:#004085,stroke:#6C3483,stroke-width:3px, color: #FFFF
