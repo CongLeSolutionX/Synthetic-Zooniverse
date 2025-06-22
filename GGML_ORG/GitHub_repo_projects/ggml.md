@@ -235,9 +235,11 @@ config:
   theme: base
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
+%%%%%%%% Available curve styles include the following keywords:
+%% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': false },
+    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
     'fontFamily': 'Bradley Hand',
     'themeVariables': {
       'primaryColor': '#fc82',
