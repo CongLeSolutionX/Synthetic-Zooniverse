@@ -67,7 +67,7 @@ config:
       'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#E2F1',
+      'secondaryColor': '#6232',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
       'fontSize': '20px'
@@ -77,14 +77,17 @@ config:
 flowchart TB
     %% Bootstrap phase
     subgraph Bootstrap_and_Provisioning["Bootstrap & Provisioning"]
+    style Bootstrap_and_Provisioning fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
     direction TB
         Setup["Bootstrap Scripts"]:::infra
     end
 
     %% Infrastructure layer
     subgraph Docker_Hosts["Docker Hosts<br/>(VMs)"]
+    style Docker_Hosts fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
     direction TB
         subgraph Runner_Pool["Runner Pool"]
+        style Runner_Pool fill:#2BF2,stroke:#333,stroke-width:1px, color: #FFFF
         direction TB
             Runner["GitHub-Runner Container"]:::container
             ModelDL["Model-Downloader Container"]:::container
@@ -96,6 +99,7 @@ flowchart TB
 
     %% External services
     subgraph GitHub["GitHub"]
+    style GitHub fill:#B2F2,stroke:#333,stroke-width:1px, color: #FFFF
     direction TB
         GitHubAPI["GitHub API"]:::external
         GitHubRepos["GitHub Repositories"]:::external
@@ -116,10 +120,10 @@ flowchart TB
     click ModelDL "https://github.com/ggml-org/ci/tree/master/images/llama.cpp-model-downloader/"
 
     %% Styles
-    classDef service fill:#D0E8FF,stroke:#005B9F,color:#000;
-    classDef container fill:#B3DFFF,stroke:#007ACC,color:#000;
-    classDef external fill:#DFFFE0,stroke:#1A7F1A,color:#000;
-    classDef infra fill:#F0F0F0,stroke:#888888,color:#000;
+    classDef service fill:#D2F2,stroke:#005B9F,color:#F8B229;
+    classDef container fill:#BF92,stroke:#007ACC,color:#F8B229;
+    classDef external fill:#DFE2,stroke:#1A7F1A,color:#F8B229;
+    classDef infra fill:#F2F2,stroke:#888888,color:#F8B229;
     class CI_Orchestrator service
     class Runner,ModelDL container
     class GitHubAPI,GitHubRepos external
