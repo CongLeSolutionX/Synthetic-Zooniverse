@@ -58,6 +58,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
@@ -84,11 +85,11 @@ flowchart TD
     C --> D["<code>llama.vim</code><br/>Vim/Neovim plugin<br/>💻 IDE Integration"]
     C --> E["<code>llama.vscode</code><br/>VSCode plugin<br/>✍️ IDE Integration"]
 
-    style A fill:#f9f,stroke:#333,stroke-width:2px,color:#333
-    style B fill:#ccf,stroke:#333,stroke-width:2px,color:#333
-    style C fill:#cfc,stroke:#333,stroke-width:2px,color:#333
-    style D fill:#ff9,stroke:#333,stroke-width:2px,color:#333
-    style E fill:#ff9,stroke:#333,stroke-width:2px,color:#333
+    style A fill:#f9f2,stroke:#333,stroke-width:2px
+    style B fill:#ccf2,stroke:#333,stroke-width:2px
+    style C fill:#cfc2,stroke:#333,stroke-width:2px
+    style D fill:#ff92,stroke:#333,stroke-width:2px
+    style E fill:#ff92,stroke:#333,stroke-width:2px
 ```
 
 > :clipboard: **A little note on `ggml`:**
