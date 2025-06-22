@@ -75,9 +75,9 @@ config:
   }
 }%%
 flowchart TB
-    Logo@{ img: "https://pbs.twimg.com/profile_images/1913581839987380224/8X6G4lfs_400x400.jpg", label: "..🪚..🛠️..📚..", pos: "b", w: 200, h: 150, constraint: "on" }
+    %% Logo@{ img: "https://pbs.twimg.com/profile_images/1913581839987380224/8X6G4lfs_400x400.jpg", label: "..🪚..🛠️..📚..", pos: "b", w: 200, h: 150, constraint: "on" }
 
-    Logo ~~~ Bootstrap_and_Provisioning
+    %% Logo ~~~ Bootstrap_and_Provisioning
     
     %% Bootstrap phase
     subgraph Bootstrap_and_Provisioning["Bootstrap & Provisioning"]
