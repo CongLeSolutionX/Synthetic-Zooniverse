@@ -86,7 +86,7 @@ flowchart TD
 
 
     %% I/O & Model Representation Layer
-    subgraph I_O_and_Model["I/O & Model<br/>(Blue)"]
+    subgraph I_O_and_Model["I/O & Model"]
     style I_O_and_Model fill:#004085,stroke:#6C3483,stroke-width:3px, color: #FFFF
     direction TB
       B1["llama-model-loader"]:::io
@@ -100,7 +100,7 @@ flowchart TD
     end
 
     %% Execution & Backends Layer
-    subgraph Execution_and_Backends["Execution & Backends<br/>(Green)"]
+    subgraph Execution_and_Backends["Execution & Backends"]
     style Execution_and_Backends fill:#155724,stroke:#856404,stroke-width:1px, color: #FFFF
     direction TB
       C1["llama-graph"]:::exec
@@ -118,7 +118,7 @@ flowchart TD
     end
 
     %% Quantization & Sampling Layer
-    subgraph Quant_and_Sampling["Quant & Sampling<br/>(Orange)"]
+    subgraph Quant_and_Sampling["Quant & Sampling"]
     style Quant_and_Sampling fill:#856404,stroke:#333,stroke-width:1px, color: #FFFF
     direction TB
       E1["llama-quant"]:::quant
@@ -126,7 +126,7 @@ flowchart TD
     end
 
     %% Chat & Context Layer
-    subgraph Chat_and_Context["Chat & Context<br/>(Purple)"]
+    subgraph Chat_and_Context["Chat & Context"]
     style Chat_and_Context fill:#6f42c1,stroke:#333,stroke-width:1px, color: #FFFF
     direction TB
       F1["llama-chat"]:::chat
@@ -134,7 +134,7 @@ flowchart TD
     end
 
     %% Utilities Layer
-    subgraph Utilities["Utilities<br/>(Gray)"]
+    subgraph Utilities["Utilities"]
     style Utilities fill:#6c757d,stroke:#333,stroke-width:2px, color: #FFFF
     direction TB
       G1["unicode"]:::util
