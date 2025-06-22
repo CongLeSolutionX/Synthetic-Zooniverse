@@ -57,7 +57,7 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'flowchart': { 'htmlLabels': true, 'curve': 'bumpY' },
     'fontFamily': 'American Typewriter, monospace',
     'logLevel': 'fatal',
     'themeVariables': {
@@ -72,7 +72,7 @@ config:
     }
   }
 }%%
-flowchart TD
+flowchart LR
   %% Global Entities
   Editor["VS Code Editor Host"]:::external
 
