@@ -85,6 +85,12 @@ flowchart TD
     C --> D["<code>llama.vim</code><br/>Vim/Neovim plugin<br/>💻 IDE Integration"]
     C --> E["<code>llama.vscode</code><br/>VSCode plugin<br/>✍️ IDE Integration"]
 
+    click A "https://github.com/ggml-org/ggml"
+    click B "https://github.com/ggml-org/whisper.cpp"
+    click C "https://github.com/ggml-org/llama.cpp"
+    click D "https://github.com/ggml-org/llama.vim"
+    click E "https://github.com/ggml-org/llama.vscode"
+
     style A fill:#f9f2,stroke:#333,stroke-width:2px
     style B fill:#ccf2,stroke:#333,stroke-width:2px
     style C fill:#cfc2,stroke:#333,stroke-width:2px
