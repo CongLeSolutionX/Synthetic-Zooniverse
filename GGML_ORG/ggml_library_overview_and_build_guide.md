@@ -29,7 +29,7 @@ source: https://github.com/ggml-org/ggml/blob/master/README.md
 >
 > This document contains my personal notes on the topic,
 > compiled from publicly available documentation and various cited sources.
-> The materials are intended for educational purposes (<ins>sometimes, entertainment purposes</ins>), personal study, and reference.
+> The materials are intended for 👨‍🎓 <ins>educational purposes</ins> 👨‍🎓 (<ins>:trollface:sometimes, entertainment purposes:trollface:</ins>), 📖 <ins> personal study </ins> 📖, and 🔖 <ins> reference </ins> 🔖.
 > The content is dual-licensed:
 > 1. **MIT License:** Applies to all code implementations (Swift, Mermaid, and other programming languages).
 > 2. **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0):** Applies to all non-code content, including text, explanations, diagrams, and illustrations.
@@ -38,6 +38,8 @@ source: https://github.com/ggml-org/ggml/blob/master/README.md
 
 
 ---
+
+
 ## 🐑 `ggml`: A Tensor Library for Machine Learning
 `ggml` is a tensor library designed for machine learning tasks. It's noteworthy for its focus on efficiency, broad hardware compatibility, and minimal dependencies. As highlighted, it's under active development, with significant contributions also seen in projects like [llama.cpp](https://github.com/ggerganov/llama.cpp) and [whisper.cpp](https://github.com/ggerganov/whisper.cpp).
 
