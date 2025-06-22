@@ -66,7 +66,7 @@ config:
       'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#EEF2',
+      'secondaryColor': '#222',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
       'fontSize': '15px'
@@ -78,34 +78,35 @@ flowchart TB
     User["User"]:::user
 
     %% Documentation
-    doc["README.md"]:::doc
-    gitignore1[".gitignore"]:::doc
-    gitignore2["cards/.gitignore"]:::doc
+    doc["<b>README.md</b>"]:::doc
+    gitignore1["<b>.gitignore</b>"]:::doc
+    gitignore2["<b>cards/.gitignore</b>"]:::doc
 
-    %% CLI Entry Scripts
-    subgraph "CLI Entry Scripts"
-        script1["llama.cpp-feature-cache-reuse.sh"]:::script
-        script2["llama.cpp-feature-speculative-decoding.sh"]:::script
-        script3["llama.cpp-model-gemma-3-test.sh"]:::script
-        script4["llama.cpp-model-nomic-embed-text-v2.sh"]:::script
-        script5["llama.cpp-model-qwen-3.sh"]:::script
+    subgraph CLI_Entry_Scripts["CLI Entry Scripts"]
+    style CLI_Entry_Scripts fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+        script1["<b>llama.cpp-feature-cache-reuse.sh</b>"]:::script
+        script2["<b>llama.cpp-feature-speculative-decoding.sh</b>"]:::script
+        script3["<b>llama.cpp-model-gemma-3-test.sh</b>"]:::script
+        script4["<b>llama.cpp-model-nomic-embed-text-v2.sh</b>"]:::script
+        script5["<b>llama.cpp-model-qwen-3.sh</b>"]:::script
     end
 
-    common["common.sh"]:::script
+    common["<b>common.sh</b>"]:::script
 
-    %% Engine
-    subgraph "llama.cpp Engine"
-        engine["llama.cpp binary + models"]:::engine
+    subgraph llama_cpp_Engine["llama.cpp Engine"]
+    style llama_cpp_Engine fill:#BFF2,stroke:#333,stroke-width:1px, color: #FFFF
+      engine["llama.cpp binary + models"]:::engine
     end
 
     %% Assets
-    subgraph "Assets"
+    subgraph Assets["Assets"]
+    style Assets fill:#22BB,stroke:#333,stroke-width:1px, color: #FFFF
         fonts["Fonts"]:::asset
         logo["Logo"]:::asset
     end
 
-    composer["Image Composer (ImageMagick)"]:::process
-    output["Output: output.png"]:::output
+    composer["Image Composer<br/>(ImageMagick)"]:::process
+    output["Output:<br/><b>output.png</b>"]:::output
     sync["Sync to ggml org"]:::sync
 
     %% Flow
@@ -115,7 +116,7 @@ flowchart TB
     User -->|runs| script4
     User -->|runs| script5
 
-    script1 -->|"sources common.sh"| common
+    script1 -->|"sources <b>common.sh</b>"| common
     script2 --> common
     script3 --> common
     script4 --> common
