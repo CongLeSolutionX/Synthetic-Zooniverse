@@ -59,7 +59,7 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'basis' },
+    'flowchart': { 'htmlLabels': true, 'curve': 'bumpY' },
     'fontFamily': 'American Typewriter, monospace',
     'logLevel': 'fatal',
     'themeVariables': {
@@ -74,7 +74,7 @@ config:
     }
   }
 }%%
-flowchart TD
+flowchart LR
     %% Build-time flow
     subgraph Build_System["Build System"]
     style Build_System fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
