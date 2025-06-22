@@ -68,7 +68,7 @@ config:
       'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#E2F1',
+      'secondaryColor': '#2121',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
       'fontSize': '20px'
@@ -77,29 +77,33 @@ config:
 }%%
 flowchart TD
     subgraph LocalMachine["Local Machine"]
-        subgraph "Vim Client Layer"
+    style LocalMachine fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
+        subgraph Vim_Client_Layer["Vim Client Layer"]
+        style Vim_Client_Layer fill:#E7FA,stroke:#333,stroke-width:1px, color: #FFFF
             VimEditor["Vim Editor"]:::client
         end
-        subgraph "Plugin Logic Layer"
-            Autoload["llama.vim Autoload\n(Core Logic)"]:::client
-            PluginEntry["llama.vim Plugin\n(Entry Points)"]:::client
+        subgraph Plugin_Logic_Layer["Plugin Logic Layer"]
+        style Plugin_Logic_Layer fill:#22F2,stroke:#333,stroke-width:1px, color: #FFFF
+            Autoload["llama.vim Autoload<br/>(Core Logic)"]:::client
+            PluginEntry["llama.vim Plugin<br/>(Entry Points)"]:::client
             RingBuffer["Ring Buffer"]:::store
             Config["g:llama_config"]:::store
         end
     end
 
-    subgraph "External Service Layer"
+    subgraph External_Service_Layer["External Service Layer"]
+    style External_Service_Layer fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         Server["llama-server"]:::external
         ModelFiles["Model Files"]:::external
     end
 
-    VimEditor -->|"user events:\nInsert-mode autocmds,\nkeymaps"| PluginEntry
+    VimEditor -->|"user events:<br/>Insert-mode autocmds,<br/>keymaps"| PluginEntry
     PluginEntry -->|"delegates to"| Autoload
     Autoload -->|"manage context"| RingBuffer
     Config -->|"read config at startup"| Autoload
-    Autoload -->|"RPC call:\ncontext request\n(HTTP/WebSocket)"| Server
-    Server -->|"stream tokens\n(JSON)"| Autoload
-    Autoload -->|"render suggestion\ninline"| VimEditor
+    Autoload -->|"RPC call:<br/>context request<br/>(HTTP/WebSocket)"| Server
+    Server -->|"stream tokens<br/>(JSON)"| Autoload
+    Autoload -->|"render suggestion<br/>inline"| VimEditor
     Server -->|"load model artifacts"| ModelFiles
 
     click Autoload "https://github.com/ggml-org/llama.vim/blob/master/autoload/llama.vim"
@@ -109,9 +113,9 @@ flowchart TD
     click MetadataReadme "https://github.com/ggml-org/llama.vim/blob/master/README.md"
     click MetadataLicense "https://github.com/ggml-org/llama.vim/tree/master/LICENSE"
 
-    classDef client fill:#E0F7FA,stroke:#006064,color:#006064
-    classDef external fill:#E8F5E9,stroke:#1B5E20,color:#1B5E20
-    classDef store fill:#FFF3E0,stroke:#E65100,color:#E65100
+    classDef client fill:#006064,stroke:#006064,color:#F8B229
+    classDef external fill:#1B5E20,stroke:#1B5E20,color:#F8B229
+    classDef store fill:#E65100,stroke:#E65100,color:#F8B229
     style LocalMachine stroke:#333,stroke-dasharray:5 5,fill:none
 ```
 
