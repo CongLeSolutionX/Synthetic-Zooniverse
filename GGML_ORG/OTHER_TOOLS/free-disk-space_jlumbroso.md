@@ -50,6 +50,7 @@ copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   layout: elk
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%%%%%%% Available curve styles include the following keywords:
@@ -63,7 +64,7 @@ config:
       'primaryTextColor': '#F8B229',
       'lineColor': '#F8B229',
       'primaryBorderColor': '#27AE60',
-      'secondaryColor': '#EEF2',
+      'secondaryColor': '#22BB',
       'secondaryTextColor': '#6C3483',
       'secondaryBorderColor': '#A569BD',
       'fontSize': '15px'
@@ -73,21 +74,25 @@ config:
 flowchart TB
     %% Global Layers
     subgraph User_Configuration["User Configuration"]
+    style User_Configuration fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
         Workflow["GitHub Actions Workflow"]:::config
-        ActionDef["Action Definition<br/>(action.yml)"]:::config
+        ActionDef["Action Definition<br/>(<b>action.yml</b>)"]:::config
     end
 
-    subgraph "Host Environment"
+    subgraph Host_Environment["Host Environment"]
+    style Host_Environment fill:#22BB,stroke:#333,stroke-width:1px, color: #FFFF
         Runner["Ubuntu Runner VM"]:::host
     end
 
     subgraph Clean_up_Engine["Clean-up Engine"]
+    style Clean_up_Engine fill:#2FB2,stroke:#333,stroke-width:1px, color: #FFFF
     direction TB
         ModulesGroup["Clean-up Modules"]:::engine
         subgraph Clean_up_engine[" "]
+        style Clean_up_engine fill:#21B2,stroke:#333,stroke-width:1px, color: #FFFF
         direction TB
             Android["Android libs cleanup"]:::module
-            Dotnet[".NET cleanup"]:::module
+            Dotnet["<b>.NET</b> cleanup"]:::module
             Haskell["Haskell cleanup"]:::module
             Large["Large packages cleanup"]:::module
             Toolcache["Tool cache cleanup"]:::module
@@ -97,12 +102,12 @@ flowchart TB
     end
 
     DocsGroup["Project Documentation & License"]:::doc
-    README["README.md"]:::doc
-    License["LICENSE"]:::doc
+    README["<b>README.md</b>"]:::doc
+    License["<b>LICENSE</b>"]:::doc
 
     %% Connections
     Workflow -->|"trigger event"| Runner
-    Runner -->|"reads action.yml"| ActionDef
+    Runner -->|"reads <b>action.yml</b>"| ActionDef
     ActionDef -->|"input flags"| ModulesGroup
     ModulesGroup --> Android
     ModulesGroup --> Dotnet
@@ -125,12 +130,12 @@ flowchart TB
     click License "https://github.com/jlumbroso/free-disk-space/tree/main/LICENSE"
 
     %% Styles
-    classDef config fill:#a8e6cf,stroke:#333,stroke-width:1px
-    classDef host fill:#ccc,stroke:#333,stroke-width:1px
-    classDef engine fill:#dcedc1,stroke:#333,stroke-width:1px
-    classDef module fill:#84b6f4,stroke:#333,stroke-width:1px
-    classDef log fill:#ffd97d,stroke:#333,stroke-width:1px
-    classDef doc fill:#ffaaa5,stroke:#333,stroke-width:1px
+    classDef config fill:#a6cf,stroke:#333,stroke-width:1px
+    classDef host fill:#c2cc,stroke:#333,stroke-width:1px
+    classDef engine fill:#dcd21,stroke:#333,stroke-width:1px
+    classDef module fill:#b6f4,stroke:#333,stroke-width:1px
+    classDef log fill:#f922,stroke:#333,stroke-width:1px
+    classDef doc fill:#fa25,stroke:#333,stroke-width:1px
 ```
 
 -----
