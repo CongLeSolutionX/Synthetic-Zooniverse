@@ -75,6 +75,9 @@ config:
   }
 }%%
 flowchart LR
+    %% Logo@{ img: "https://pbs.twimg.com/profile_images/1913581839987380224/8X6G4lfs_400x400.jpg", label: "..🪚..🛠️..📚..", pos: "b", w: 200, h: 150, constraint: "on" }
+    %% Logo ~~~ Build_System
+
     %% Build-time flow
     subgraph Build_System["Build System"]
     style Build_System fill:#F2F2,stroke:#333,stroke-width:1px, color: #FFFF
