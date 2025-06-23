@@ -57,7 +57,7 @@ config:
 %% basis, bumpX, bumpY, cardinal, catmullRom, linear, monotoneX, monotoneY, natural, step, stepAfter, stepBefore.
 %%{
   init: {
-    'flowchart': { 'htmlLabels': true, 'curve': 'linear'},
+    'flowchart': { 'htmlLabels': true, 'curve': 'natural'},
     'fontFamily': 'Monaco',
     'themeVariables': {
       'primaryColor': '#22BB',
