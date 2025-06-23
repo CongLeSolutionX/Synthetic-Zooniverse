@@ -152,7 +152,7 @@ User@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/r
     click gitignore2 "https://github.com/ggml-org/media/blob/master/cards/.gitignore"
 
     %% Styles
-    classDef user fill:#eef2,stroke:#333,stroke-width:1px
+    classDef user fill:#eef2,stroke:#F8B229,stroke-width:3px
     classDef script fill:#ddf2,stroke:#333,stroke-width:1px
     classDef engine fill:#cfc2,stroke:#333,stroke-width:1px
     classDef asset fill:#fcf2,stroke:#333,stroke-width:1px
