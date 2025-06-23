@@ -75,6 +75,7 @@ flowchart TB
     %% Actors
     %% User["User"]:::user
 User@{ img: "https://raw.githubusercontent.com/CongLeSolutionX/CongLeSolutionX/refs/heads/main/assets/images/My-meme-and-question-marks-open-book-old-characters-background.png", label: "...👀.User.📖...", pos: "b", w: 200, h: 150, constraint: "off" }
+    User:::user
 
     %% Documentation
     doc["<b>README.md</b>"]:::doc
