@@ -385,9 +385,9 @@ flowchart LR
 >- <b>MIT License</b>:  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) - Full text in [LICENSE](LICENSE) file.
 >- <b>Creative Commons Attribution-ShareAlike 4.0 International</b>: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) [![CC BY-SA 4.0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/) - Legal details in [LICENSE-CC-BY-SA-4.0](THE_PAST/LICENSE-CC-BY-SA-4.0) and at [Creative Commons official site](https://creativecommons.org/licenses/by-sa/4.0/).
 >
----
 
-### References
+
+
 
 [^1]: Council of Graduate Schools. "About Graduate Education." Accessed October 26, 2023. [https://cgsnet.org/discover-graduate-education/about-graduate-education/](https://cgsnet.org/discover-graduate-education/about-graduate-education/).
 
