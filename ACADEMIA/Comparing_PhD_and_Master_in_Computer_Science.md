@@ -103,7 +103,7 @@ mindmap
 
 ## 🛤️ 2. The Educational Journey: Timelines and Milestones
 
-The journey through each degree program involves different stages and a significantly different time commitment. For full-time students, a Master's degree is often completed in 1-3 years,¹ while the median time to complete a PhD in computer sciences is around seven years from the start of graduate studies.² This flowchart illustrates the typical progression for both paths.
+The journey through each degree program involves different stages and a significantly different time commitment. For full-time students, a Master's degree is often completed in 1-3 years[^1], while the median time to complete a PhD in computer sciences is around seven years from the start of graduate studies.² This flowchart illustrates the typical progression for both paths.
 
 ```mermaid
 ---
@@ -389,7 +389,7 @@ flowchart LR
 
 ### References
 
-1.  Council of Graduate Schools. "About Graduate Education." Accessed October 26, 2023. [https://cgsnet.org/discover-graduate-education/about-graduate-education/](https://cgsnet.org/discover-graduate-education/about-graduate-education/).
+[^1]: Council of Graduate Schools. "About Graduate Education." Accessed October 26, 2023. [https://cgsnet.org/discover-graduate-education/about-graduate-education/](https://cgsnet.org/discover-graduate-education/about-graduate-education/).
 
 2.  National Center for Science and Engineering Statistics. *Doctorate Recipients from U.S. Universities: 2022*. NSF 24-302. Arlington, VA: National Science Foundation, 2023. [https://ncses.nsf.gov/pubs/nsf24302/](https://ncses.nsf.gov/pubs/nsf24302/). Table 22.
 
