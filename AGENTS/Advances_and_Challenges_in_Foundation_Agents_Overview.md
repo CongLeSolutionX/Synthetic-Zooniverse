@@ -30,22 +30,33 @@ original source: "https://github.com/FoundationAgents/awesome-foundation-agents/
 title: "Advances and Challenges in Foundation Agents"
 author: "Cong Le"
 version: "1.0"
-license(s): "MIT, CC BY 4.0"
-copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
+license(s): "MIT, CC BY-SA 4.0"
+copyright: "Copyright © 2025 Cong Le. All Rights Reserved."
 config:
-  theme: dark
+  theme: base
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%{
   init: {
+    'fontFamily': 'American Typewriter, monospace',
+    'logLevel': 'fatal',
+    'mindmap': {
+	    'nodeAlign': 'center',
+	    'padding': 20
+    },
     'themeVariables': {
-      'fontSize': '16px',
-      'fontFamily': 'Bradley Hand'
+      'primaryColor': '#FC82',
+      'primaryTextColor': '#F8B229',
+      'primaryBorderColor': '#27AE60',
+      'secondaryColor': '#EBF3',
+      'secondaryTextColor': '#6C3483',
+      'secondaryBorderColor': '#A569BD',
+      'fontSize': '20px'
     }
   }
 }%%
 mindmap
-  root((Foundation Agents Survey))
+  root)"Foundation Agents Survey"(
     (Introduction - Ch 1)
       ::icon(fa fa-book)
       ("Definition:<br/>AI Agents")
