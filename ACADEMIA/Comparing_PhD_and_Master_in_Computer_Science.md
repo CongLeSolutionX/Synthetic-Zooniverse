@@ -103,7 +103,7 @@ mindmap
 
 ## 🛤️ 2. The Educational Journey: Timelines and Milestones
 
-The journey through each degree program involves different stages and a significantly different time commitment. For full-time students, a Master's degree is often completed in 1-3 years[^1], while the median time to complete a PhD in computer sciences is around seven years from the start of graduate studies.² This flowchart illustrates the typical progression for both paths.
+The journey through each degree program involves different stages and a significantly different time commitment. For full-time students, a Master's degree is often completed in 1-3 years[^1], while the median time to complete a PhD in computer sciences is around seven years from the start of graduate studies[^2]. This flowchart illustrates the typical progression for both paths.
 
 ```mermaid
 ---
@@ -243,7 +243,7 @@ digraph G {
 ```
 
 -   **Master's Degree (Depth):** You pick a field like AI/ML and go deep, becoming an expert in applying current knowledge and tools.
--   **PhD (Advancing the Frontier):** You build a foundation and then push past the edge of what is known, contributing a piece of new knowledge ($ \Delta K $) back to the field.
+-   **PhD (Advancing the Frontier):** You build a foundation and then push past the edge of what is known, contributing a piece of new knowledge ($\Delta K$) back to the field.
 
 ---
 
@@ -313,15 +313,15 @@ W --> [*]
 
 ## 💰 5. Career Paths and Salary Expectations
 
-Ultimately, your choice of degree strongly influences your career path. The following table uses 2023 national salary data from the U.S. Bureau of Labor Statistics to provide an overview, though actual salaries vary significantly by location, experience, and employer.³
+Ultimately, your choice of degree strongly influences your career path. The following table uses 2023 national salary data from the U.S. Bureau of Labor Statistics to provide an overview, though actual salaries vary significantly by location, experience, and employer[^3].
 
 | Career Path                                     | Relevant Degree(s) | 2023 Median Pay (U.S.) | Notes                                                                             |
 | ----------------------------------------------- | :----------------: | :--------------------: | --------------------------------------------------------------------------------- |
-| 💻 **Software Developer**                       |     Master's/PhD     |      `$132,930`⁴      | A Master's is common; a PhD can lead to highly specialized roles.                 |
-| 📊 **Data Scientist**                           |     Master's/PhD     |      `$136,540`⁵      | A Master's is great for most roles; a PhD is valued for specialized R&D.          |
-| 🔬 **Computer & Information Research Scientist**  |     Master's/PhD     |      `$145,080`⁶      | A Master's is the typical entry-level education, but a PhD is often required for senior positions.⁶ |
-| 🧑‍🏫 **Postsecondary Teacher (Professor)**         |        PhD         |      `$84,380`⁷       | A PhD is a firm requirement for most tenure-track academic positions.             |
-| 🛡️ **Information Security Analyst**              |      Master's      |      `$120,360`⁸      | A Master's degree can provide a competitive advantage in this high-demand field.  |
+| 💻 **Software Developer**                       |     Master's/PhD     |      `$132,930`[^4]      | A Master's is common; a PhD can lead to highly specialized roles.                 |
+| 📊 **Data Scientist**                           |     Master's/PhD     |      `$136,540`[^5]      | A Master's is great for most roles; a PhD is valued for specialized R&D.          |
+| 🔬 **Computer & Information Research Scientist**  |     Master's/PhD     |      `$145,080`[^6]      | A Master's is the typical entry-level education, but a PhD is often required for senior positions.⁶ |
+| 🧑‍🏫 **Postsecondary Teacher (Professor)**         |        PhD         |      `$84,380`[^7]       | A PhD is a firm requirement for most tenure-track academic positions.             |
+| 🛡️ **Information Security Analyst**              |      Master's      |      `$120,360`[^8]      | A Master's degree can provide a competitive advantage in this high-demand field.  |
 
 ---
 
@@ -391,18 +391,18 @@ flowchart LR
 
 [^1]: Council of Graduate Schools. "About Graduate Education." Accessed October 26, 2023. [https://cgsnet.org/discover-graduate-education/about-graduate-education/](https://cgsnet.org/discover-graduate-education/about-graduate-education/).
 
-2.  National Center for Science and Engineering Statistics. *Doctorate Recipients from U.S. Universities: 2022*. NSF 24-302. Arlington, VA: National Science Foundation, 2023. [https://ncses.nsf.gov/pubs/nsf24302/](https://ncses.nsf.gov/pubs/nsf24302/). Table 22.
+[^2]: National Center for Science and Engineering Statistics. *Doctorate Recipients from U.S. Universities: 2022*. NSF 24-302. Arlington, VA: National Science Foundation, 2023. [https://ncses.nsf.gov/pubs/nsf24302/](https://ncses.nsf.gov/pubs/nsf24302/). Table 22.
 
-3.  U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook." Accessed October 26, 2023. [https://www.bls.gov/ooh/](https://www.bls.gov/ooh/).
+[^3]: U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook." Accessed October 26, 2023. [https://www.bls.gov/ooh/](https://www.bls.gov/ooh/).
 
-4.  U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook: Software Developers, Quality Assurance Analysts, and Testers." Last modified September 6, 2024. [https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm](https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm).
+[^4]: U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook: Software Developers, Quality Assurance Analysts, and Testers." Last modified September 6, 2024. [https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm](https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm).
 
-5.  U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook: Data Scientists." Last modified September 6, 2024. [https://www.bls.gov/ooh/math/data-scientists.htm](https://www.bls.gov/ooh/math/data-scientists.htm).
+[^5]: U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook: Data Scientists." Last modified September 6, 2024. [https://www.bls.gov/ooh/math/data-scientists.htm](https://www.bls.gov/ooh/math/data-scientists.htm).
 
-6.  U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook: Computer and Information Research Scientists." Last modified September 6, 2024. [https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm](https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm).
+[^6]: U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook: Computer and Information Research Scientists." Last modified September 6, 2024. [https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm](https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm).
 
-7.  U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook: Postsecondary Teachers." Last modified September 6, 2024. [https://www.bls.gov/ooh/education-training-and-library/postsecondary-teachers.htm](https://www.bls.gov/ooh/education-training-and-library/postsecondary-teachers.htm).
+[^7]: U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook: Postsecondary Teachers." Last modified September 6, 2024. [https://www.bls.gov/ooh/education-training-and-library/postsecondary-teachers.htm](https://www.bls.gov/ooh/education-training-and-library/postsecondary-teachers.htm).
 
-8.  U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook: Information Security Analysts." Last modified September 6, 2024. [https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm](https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm).
+[^8]: U.S. Bureau of Labor Statistics. "Occupational Outlook Handbook: Information Security Analysts." Last modified September 6, 2024. [https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm](https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm).
 
 ----
