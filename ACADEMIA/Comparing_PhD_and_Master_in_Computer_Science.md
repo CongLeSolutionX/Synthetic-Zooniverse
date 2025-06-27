@@ -332,7 +332,9 @@ Your decision should align with your ultimate career aspirations.
 -   Choose a **Master's Degree** if your goal is to become a highly skilled specialist, lead technical teams in the industry, and apply cutting-edge knowledge to solve practical problems.
 -   Choose a **PhD** if you are driven by curiosity, wish to contribute to the fundamental body of knowledge, and seek a career in research, invention, or academia.
 
-Both paths are rewarding and offer incredible opportunities for growth and impact in the ever-changing world of computer science. Good luck! 👍
+Both paths are rewarding and offer incredible opportunities for growth and impact in the ever-changing world of computer science.
+
+Good luck! 👍
 
 ---
 
