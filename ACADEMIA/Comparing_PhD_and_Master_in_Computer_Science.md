@@ -347,6 +347,7 @@ license(s): "MIT, CC BY-SA 4.0"
 copyright: "Copyright (c) 2025 Cong Le. All Rights Reserved."
 config:
   theme: base
+  look: handDrawn
 ---
 %%%%%%%% Mermaid version v11.4.1-b.14
 %%{
@@ -371,11 +372,14 @@ flowchart LR
 
   Closing_quote@{ shape: braces, label: "..👀..<br/>'Unfortunately,<br/>no one can be told<br/> what the Matrix is.<br/>You have to see it<br/>for yourself'<br/>...📚..<br/>-<ins>Morpheus,<br/>a character from the movie The Matrix 1999</ins>"}
 
-   Closing_quote ~~~ My_Meme
+  My_Meme:::Node_Background_Style
+  Closing_quote ~~~ My_Meme
 
     My_Meme animatingEdge@--> Link_to_my_profile
   
   animatingEdge@{ animate: true }
+
+  classDef Node_Background_Style fill:#22BB,stroke:#5229,stroke-width:3px, color: #F222FF
 
 ```
 
